@@ -1,0 +1,3 @@
+[submodule "dbdumps"]
+	path = dbdumps
+	url = ssh://git@bitbucket.org/ginkgomzd/dumpscripts.git
