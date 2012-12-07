@@ -7,9 +7,9 @@
  * @return TODO
  */
 
-require_once(__DIR__ . '/import.config.php') or error_out('Config file not found.');
+require_once(__DIR__ . '/import.config.php');
 
-if ($argvc < 2) {
+if ($argc < 2) {
     $argv[1] = "php://stdin";
 }
 $filename = $argv[1];
@@ -30,12 +30,12 @@ mysqli_query($DBCONN, TABLE_DROP_STATEMENT);
 
 foreach ($lines as $i => $l) {
     // partly we do this to catch malformed lines in the CSV
-    $record = array_combine($fields, explode(DELIM, $l));
+    $record = @array_combine($fields, explode(DELIM, $l));
     if (!$record) {
-        error_out('Line ' . $i + 1 . ': wrong number of fields');
+        error_out('Line ' . ($i + 1) . ': wrong number of fields');
     }
 
-    $sql = 'INSERT INTO `' . DB_TABLE . '` SET ';
+    $sql = 'INSERT INTO `' . DB_TABL . '` SET ';
 
     $sql_fields = array();
     foreach ($record as $k => $v) {
