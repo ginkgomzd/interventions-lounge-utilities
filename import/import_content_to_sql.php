@@ -3,16 +3,24 @@
 /**
  * This file is used to import raw CSV files into MySQL
  *
+ * @param string Name of config file
  * @param string Name of file to import, or STDIN if not specified
  * @return boolean 0 on success, 1 on failure
  */
 
-require_once(__DIR__ . '/import.config.php');
-
 if ($argc < 2) {
-    $argv[1] = "php://stdin";
+    error_out('Config file not specified. Usage: import_content_to_sql.php config_file data_file');
 }
-$filename = $argv[1];
+$config = $argv[1];
+if (!is_readable($config)) {
+    error_out('Config file is not readable or does not exist');
+}
+require_once($config);
+
+if ($argc < 3) {
+    $argv[2] = "php://stdin";
+}
+$filename = $argv[2];
 if (!is_readable($filename)) {
     error_out('Import source is not readable or does not exist');
 }
