@@ -11,9 +11,9 @@ define('DB_TABL', '');
 define('DB_USER', '');
 
 define('DELIM', ',');
+define('ENCLOSURE', '"');
 define('FILE_CONTAINS_HEADINGS', TRUE);
 
-define('TABLE_DROP_STATEMENT', 'DROP TABLE IF EXISTS `interventions`');
 define('TABLE_CREATE_STATEMENT',
     "CREATE TABLE IF NOT EXISTS `interventions` (
       `institution_id` varchar(19) DEFAULT NULL,

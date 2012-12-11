@@ -4,7 +4,7 @@
  * This file is used to import raw CSV files into MySQL
  *
  * @param string Name of file to import, or STDIN if not specified
- * @return TODO
+ * @return boolean 0 on success, 1 on failure
  */
 
 require_once(__DIR__ . '/import.config.php');
@@ -19,32 +19,36 @@ if (!is_readable($filename)) {
 
 $DBCONN = mysqli_connect(DB_HOST, DB_USER, DB_PASS) OR error_out(mysql_error());
 mysqli_select_db($DBCONN, DB_NAME);
+mysqli_query($DBCONN, 'DROP TABLE IF EXISTS `' . DB_TABL . '`');
+mysqli_query($DBCONN, TABLE_CREATE_STATEMENT);
 
-$lines = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-if (FILE_CONTAINS_HEADINGS) {
-    array_shift($lines);
-}
+$fp = fopen($filename, "r");
+if ($fp !== FALSE) {
 
-mysqli_query($DBCONN, TABLE_DROP_STATEMENT);
-mysqli_query($DBCONN, TABLE_DROP_STATEMENT);
+    $i = 0;
+    while ($line = fgetcsv($fp, 0, DELIM, ENCLOSURE)) {
 
-foreach ($lines as $i => $l) {
-    // partly we do this to catch malformed lines in the CSV
-    $record = @array_combine($fields, explode(DELIM, $l));
-    if (!$record) {
-        error_out('Line ' . ($i + 1) . ': wrong number of fields');
+        if (FILE_CONTAINS_HEADINGS && $i++ === 0) {
+            continue;
+        }
+
+        // partly we do this to catch malformed lines in the CSV
+        $record = @array_combine($fields, $line);
+        if (!$record) {
+            error_out('Line ' . ($i + 1) . ': wrong number of fields');
+        }
+
+        $sql = 'INSERT INTO `' . DB_TABL . '` SET ';
+
+        $sql_fields = array();
+        foreach ($record as $k => $v) {
+            $sql_fields[] = '`' . mysqli_real_escape_string($DBCONN, $k) . "` = '" . mysqli_real_escape_string($DBCONN, trim($v)) . "'";
+        }
+
+        $sql .= implode(', ', $sql_fields);
+
+        mysqli_query($DBCONN, $sql);
     }
-
-    $sql = 'INSERT INTO `' . DB_TABL . '` SET ';
-
-    $sql_fields = array();
-    foreach ($record as $k => $v) {
-        $sql_fields[] = '`' . mysqli_real_escape_string($DBCONN, $k) . "` = '" . mysqli_real_escape_string($DBCONN, trim($v)) . "'";
-    }
-
-    $sql .= implode(', ', $sql_fields);
-
-    mysqli_query($DBCONN, $sql);
 }
 
 mysqli_close($DBCONN);
