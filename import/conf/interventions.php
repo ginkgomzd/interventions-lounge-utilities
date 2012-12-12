@@ -4,10 +4,10 @@
  * Config file for import_content_to_sql.php
  */
 
-define('DB_HOST', '');
-define('DB_NAME', '');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'atd_import');
 define('DB_PASS', '');
-define('DB_TABL', '');
+define('DB_TABL', 'interventions');
 define('DB_USER', '');
 
 define('DELIM', ',');
