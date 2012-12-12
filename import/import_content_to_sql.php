@@ -31,8 +31,9 @@ mysqli_query($DBCONN, 'DROP TABLE IF EXISTS `' . DB_TABL . '`');
 mysqli_query($DBCONN, TABLE_CREATE_STATEMENT);
 
 $fp = fopen($filename, "r");
-if ($fp !== FALSE) {
-
+if ($fp === FALSE) {
+    error_out("Could not open import source");
+} else {
     $i = 0;
     while ($line = fgetcsv($fp, 0, DELIM, ENCLOSURE)) {
 
@@ -55,7 +56,7 @@ if ($fp !== FALSE) {
 
         $sql .= implode(', ', $sql_fields);
 
-        mysqli_query($DBCONN, $sql);
+        mysqli_query($DBCONN, $sql) or error_out("Database error: " . mysqli_error($DBCONN));
     }
 }
 
