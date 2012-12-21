@@ -3,18 +3,12 @@
 /**
  * This script gets all the values that ATD has been using in their multiselects
  * and presents them in order of most to least used.
+ *
+ * @param string Name of config file
+ * @return boolean 0 on success, 1 on failure
  */
 
-// connect to db
-if ($argc < 2) {
-    error_out('Config file not specified. Usage: get_all_multiselect_values.php config_file');
-}
-$config = $argv[1];
-if (!is_readable($config)) {
-    error_out('Config file is not readable or does not exist');
-}
-
-require_once($config);
+require_once __DIR__ . '/common.inc';
 define('DB_TABL', 'gdoc');
 
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->connect_errno);
@@ -81,32 +75,8 @@ if ($result = $DBCONN->query($sql)) {
     error_out('Database could not be queried.');
 }
 
-/*
- * dump resulting values into an array following this format:
- * $values = array(
- *  'intervention_type' => array(
- *      'value' => $count,
- *      'other_value' => $count,
- *  ),
- *  'content_area' => array(
- *      ...
- *  ),
- *  ...
- * );
- */
-
-// then sort them
-
-
-// print this out
-
 $DBCONN->close();
 die(0);
-
-function error_out($msg) {
-    file_put_contents('php://stderr', $msg . "\n");
-    die(1);
-}
 
 /*
  * Returns array with the following format:

@@ -3,19 +3,11 @@
 /*
  * For institutions, the Drupal db is in pretty good shape; all we'll do is
  * add the Saleforce ID to each record.
+ *
+ * @param string Name of config file
+ * @return boolean 0 on success, 1 on failure
  */
-
-// connect to db
-if ($argc < 2) {
-    error_out('Config file not specified. Usage: get_all_multiselect_values.php config_file');
-}
-$config = $argv[1];
-if (!is_readable($config)) {
-    error_out('Config file is not readable or does not exist');
-}
-
-require_once($config);
-
+require_once __DIR__ . '/common.inc';
 $db_name_drupal = 'achievingthedream_org';
 $db_name_import = 'atd_import';
 $field_name_external_id = 'field_external_id'; // should include the "field_" prefix
@@ -46,9 +38,4 @@ foreach ($sql as $q) {
 
 mysqli_close($DBCONN);
 die(0);
-
-function error_out($msg) {
-    file_put_contents('php://stderr', $msg . "\n");
-    die(1);
-}
 ?>

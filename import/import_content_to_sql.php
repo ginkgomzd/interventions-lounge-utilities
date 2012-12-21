@@ -8,15 +8,7 @@
  * @return boolean 0 on success, 1 on failure
  */
 
-if ($argc < 2) {
-    error_out('Config file not specified. Usage: import_content_to_sql.php config_file data_file');
-}
-$config = $argv[1];
-if (!is_readable($config)) {
-    error_out('Config file is not readable or does not exist');
-}
-require_once($config);
-
+require_once __DIR__ . '/common.inc';
 if ($argc < 3) {
     $argv[2] = "php://stdin";
 }
@@ -62,9 +54,4 @@ if ($fp === FALSE) {
 
 mysqli_close($DBCONN);
 die(0);
-
-function error_out($msg) {
-    file_put_contents('php://stderr', $msg . "\n");
-    die(1);
-}
 ?>
