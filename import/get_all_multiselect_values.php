@@ -183,11 +183,11 @@ function get_multiselect_mapping () {
                 '#Student[^S]+Success[^C]+Course#',
                 '#Student Success Course\.#',
                 '#Student Success course#',
+                '#Student success course#',
                 '#student success course#',
                 '#Student Success(?! Course)#',
             ),
             'Student Support Services' => array(  // should go before Gatekeeper Courses
-                '#Student success course#',
                 '#Student Support(?! Services)#',
                 '#Student Sup(?!port)#',
                 '#student support services#',
