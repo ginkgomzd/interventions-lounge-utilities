@@ -4,11 +4,8 @@
  * Config file for import_content_to_sql.php
  */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'atd_import');
-define('DB_PASS', '');
+require_once __DIR__ . '/db.php';
 define('DB_TABL', 'lookup_state');
-define('DB_USER', '');
 
 define('DELIM', ',');
 define('ENCLOSURE', '"');
