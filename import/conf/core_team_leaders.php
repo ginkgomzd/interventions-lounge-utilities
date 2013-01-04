@@ -21,6 +21,7 @@ define('FILE_CONTAINS_HEADINGS', TRUE);
 
 define('TABLE_CREATE_STATEMENT',
     "CREATE TABLE IF NOT EXISTS `core_team_leaders` (
+      `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
       `institution_id` varchar(18) DEFAULT NULL,
       `user_id` varchar(18) DEFAULT NULL,
       `fname` varchar(50) DEFAULT NULL,
@@ -41,7 +42,8 @@ define('TABLE_CREATE_STATEMENT',
       `raw_lname` varchar(300) DEFAULT NULL,
       `raw_email` varchar(300) NOT NULL DEFAULT '',
       `raw_phone` varchar(30) DEFAULT NULL,
-      `raw_fax` varchar(30) DEFAULT NULL
+      `raw_fax` varchar(30) DEFAULT NULL,
+      PRIMARY KEY (`id`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;"
 );
 
