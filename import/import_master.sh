@@ -6,6 +6,7 @@
 
 # path to import scripts
 MY_PATH="`dirname \"$0\"`"
+# TODO: set var for Drupal root (or put salesforce junk in a separate script)
 
 # purge unwanted interventions data
 ${MY_PATH}/purge-interventions-data.sh ${MY_PATH}/../../htdocs/sites/default
@@ -15,6 +16,9 @@ ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/institutions.php ${MY_PATH}
 ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/interventions.php ${MY_PATH}/data/interventions.csv
 ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/gdoc.php ${MY_PATH}/data/gdoc.csv
 ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/core_team_leaders.php ${MY_PATH}/data/core_team_leaders.csv
+
+# clean up imported gdoc (multiselect) data
+${MY_PATH}/normalize_gdoc.php ${MY_PATH}/conf/db.conf
 
 # clean up imported core_team_leaders data
 ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.conf

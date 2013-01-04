@@ -21,8 +21,7 @@ define('TABLE_CREATE_STATEMENT',
       `race` varchar(141) DEFAULT NULL,
       `outcome_indicators` varchar(379) DEFAULT NULL,
       `additional_interventions_needed` varchar(3) DEFAULT NULL,
-      `comments` varchar(20) DEFAULT NULL,
-      PRIMARY KEY (`intervention_id`)
+      `comments` varchar(20) DEFAULT NULL
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;"
 );
 
