@@ -28,7 +28,7 @@ while ($row = $result->fetch_assoc()) {
     $sql_fields = array();
 
     $id = $row['id'];
-    $record['institution_id'] = extract_from_hyperlink($row['raw_organization']);
+    $institution_id = extract_from_hyperlink($row['raw_organization']);
     $record['user_id'] = extract_from_hyperlink($row['raw_fname']);
     $record['fname'] = extract_from_hyperlink($row['raw_fname'], 'label');
     $record['lname'] = extract_from_hyperlink($row['raw_lname'], 'label');
@@ -41,12 +41,20 @@ while ($row = $result->fetch_assoc()) {
     $record['fax_ext'] = $fax_parts['ext'];
 
     foreach ($record as $k => $v) {
-        $sql_fields[] = "`{$k}` = " . (in_array($v, array('', NULL)) ? 'NULL' : "'" . $DBCONN->real_escape_string(trim($v)) . "'");
+        $sql_fields[] = "c.`{$k}` = " . (in_array($v, array('', NULL)) ? 'NULL' : "'" . $DBCONN->real_escape_string(trim($v)) . "'");
     }
 
-    $sql = 'UPDATE `' . DB_TABL . '` SET ';
+    $sql  = 'UPDATE `' . DB_TABL . '` c ';
+    /*
+     * This inner join helps us fix truncated institution IDs... Fortunately,
+     * the first 15 chars in each ID are unique as long as they are treated with
+     * case-sensitivity (hence the HEX).
+     */
+    $sql .= 'LEFT JOIN `institutions` i ';
+    $sql .= "ON HEX('$institution_id') = HEX(LEFT(i.`institution_id`,15)) ";
+    $sql .= 'SET c.`institution_id` = i.`institution_id`, ';
     $sql .= implode(', ', $sql_fields);
-    $sql .= " WHERE `id` = $id";
+    $sql .= " WHERE c.`id` = $id";
 
     $r = $DBCONN->query($sql);
     if (!$r) {
