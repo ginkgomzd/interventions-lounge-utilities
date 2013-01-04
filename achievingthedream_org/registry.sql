@@ -214,6 +214,9 @@ INSERT INTO `registry` VALUES ('FaqExistsFaq_AskTestCase','class','sites/all/mod
 INSERT INTO `registry` VALUES ('FaqTestCase','class','sites/all/modules/faq/faq.test','faq',0);
 INSERT INTO `registry` VALUES ('Faq_AskAccessTestClass','class','sites/all/modules/faq_ask/faq_ask.test','faq_ask',0);
 INSERT INTO `registry` VALUES ('Faq_AskTestCase','class','sites/all/modules/faq_ask/faq_ask.test','faq_ask',0);
+INSERT INTO `registry` VALUES ('FeaturesCtoolsIntegrationTest','class','sites/all/modules/features/tests/features.test','features',0);
+INSERT INTO `registry` VALUES ('FeaturesEnableTestCase','class','sites/all/modules/features/tests/features.test','features',0);
+INSERT INTO `registry` VALUES ('FeaturesUserTestCase','class','sites/all/modules/features/tests/features.test','features',0);
 INSERT INTO `registry` VALUES ('FeedParserTestCase','class','modules/aggregator/aggregator.test','aggregator',0);
 INSERT INTO `registry` VALUES ('FeedsConfigurable','class','sites/all/modules/feeds/includes/FeedsConfigurable.inc','feeds',0);
 INSERT INTO `registry` VALUES ('FeedsCSVParser','class','sites/all/modules/feeds/plugins/FeedsCSVParser.inc','feeds',0);
@@ -646,6 +649,8 @@ INSERT INTO `registry` VALUES ('RulesTriggerableInterface','interface','sites/al
 INSERT INTO `registry` VALUES ('RulesTriggerTestCase','class','sites/all/modules/rules/tests/rules.test','rules',20);
 INSERT INTO `registry` VALUES ('RulesUIController','class','sites/all/modules/rules/ui/ui.controller.inc','rules',20);
 INSERT INTO `registry` VALUES ('RulesURIInputEvaluator','class','sites/all/modules/rules/modules/rules_core.eval.inc','rules',20);
+INSERT INTO `registry` VALUES ('Salesforce','class','sites/all/modules/salesforce/includes/salesforce.inc','salesforce',0);
+INSERT INTO `registry` VALUES ('SalesforceException','class','sites/all/modules/salesforce/includes/salesforce.inc','salesforce',0);
 INSERT INTO `registry` VALUES ('SchemaCache','class','includes/bootstrap.inc','',0);
 INSERT INTO `registry` VALUES ('SearchAdvancedSearchForm','class','modules/search/search.test','search',0);
 INSERT INTO `registry` VALUES ('SearchBlockTestCase','class','modules/search/search.test','search',0);
@@ -1097,6 +1102,18 @@ INSERT INTO `registry` VALUES ('views_slideshow_plugin_style_slideshow','class',
 INSERT INTO `registry` VALUES ('views_test_plugin_access_test_dynamic','class','sites/all/modules/views/tests/test_plugins/views_test_plugin_access_test_dynamic.inc','views',10);
 INSERT INTO `registry` VALUES ('views_test_plugin_access_test_static','class','sites/all/modules/views/tests/test_plugins/views_test_plugin_access_test_static.inc','views',10);
 INSERT INTO `registry` VALUES ('views_ui','class','sites/all/modules/views/plugins/export_ui/views_ui.class.php','views_ui',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationDraftTabTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationFilesTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.files.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationModerateTabTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationPublishFromNodeFormTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('WorkbenchModerationUnpublishTestCase','class','sites/all/modules/workbench_moderation/tests/workbench_moderation.test','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_field_history_link','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_history_link.inc','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_field_links','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_links.inc','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_field_state','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_state.inc','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_filter_moderated_type','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_moderated_type.inc','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_filter_state','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_state.inc','workbench_moderation',0);
+INSERT INTO `registry` VALUES ('workbench_moderation_handler_filter_user_can_moderate','class','sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_user_can_moderate.inc','workbench_moderation',0);
 INSERT INTO `registry` VALUES ('WysiwygProfileController','class','sites/all/modules/wysiwyg/wysiwyg.module','wysiwyg',0);
 /*!40000 ALTER TABLE `registry` ENABLE KEYS */;
 UNLOCK TABLES;

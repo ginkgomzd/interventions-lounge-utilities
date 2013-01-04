@@ -43,7 +43,7 @@ CREATE TABLE `menu_links` (
   KEY `menu_plid_expand_child` (`menu_name`,`plid`,`expanded`,`has_children`),
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `router_path` (`router_path`(128))
-) ENGINE=InnoDB AUTO_INCREMENT=1098 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
+) ENGINE=InnoDB AUTO_INCREMENT=1120 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `menu_links` WRITE;
@@ -52,7 +52,7 @@ INSERT INTO `menu_links` VALUES ('management',1,0,'admin','admin','Administratio
 INSERT INTO `menu_links` VALUES ('user-menu',2,0,'user','user','User account','a:2:{s:5:\"alter\";b:1;s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',1,0,0,0,-10,1,1,2,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',3,0,'comment/%','comment/%','Comment permalink','a:0:{}','system',0,0,1,0,0,1,0,3,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',4,0,'filter/tips','filter/tips','Compose tips','a:0:{}','system',1,0,0,0,0,1,0,4,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('navigation',5,0,'node/%','node/%','','a:0:{}','system',0,0,0,0,0,1,0,5,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',5,0,'node/%','node/%','','a:0:{}','system',0,0,1,0,0,1,0,5,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',6,1,'node/add','node/add','Add content','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',0,0,0,0,-49,2,1,1,6,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',7,1,'admin/appearance','admin/appearance','Appearance','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:33:\"Select and configure your themes.\";}}','system',0,0,0,0,-46,2,1,1,7,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',8,1,'admin/config','admin/config','Configuration','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:20:\"Administer settings.\";}}','system',0,0,1,0,-43,2,1,1,8,0,0,0,0,0,0,0,0);
@@ -738,6 +738,28 @@ INSERT INTO `menu_links` VALUES ('menu-dream-2013',1094,0,'node/3924','node/%','
 INSERT INTO `menu_links` VALUES ('main-menu',1095,477,'node/3959','node/%','DREAMbassadors','a:0:{}','menu',0,0,0,0,0,3,0,439,477,1095,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1096,484,'node/3979','node/%','2013 Cohort RFP','a:0:{}','menu',0,0,0,0,0,3,0,441,484,1096,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-dream-2013',1097,0,'node/3998','node/%','Disneyland Tickets','a:0:{}','menu',0,0,0,0,48,1,0,1097,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1098,21,'admin/structure/features','admin/structure/features','Features','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:16:\"Manage features.\";}}','system',0,0,0,0,0,3,0,1,21,1098,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1099,5,'node/%/moderation','node/%/moderation','Moderate','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:36:\"Show the content moderation history.\";}}','system',-1,0,0,0,0,2,0,5,1099,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1100,5,'node/%/current-revision','node/%/current-revision','','a:0:{}','system',0,0,0,0,0,2,0,5,1100,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1101,21,'admin/structure/salesforce','admin/structure/salesforce','Salesforce','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:41:\"Configuration for Salesforce integration.\";}}','system',0,0,0,0,0,3,0,1,21,1101,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1102,5,'node/%/draft','node/%/draft','View draft','a:0:{}','system',-1,0,0,0,-9,2,0,5,1102,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1103,8,'admin/config/workbench','admin/config/workbench','Workbench','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:9:\"Workbench\";}}','system',0,0,1,0,0,3,0,1,8,1103,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1104,12,'admin/help/features','admin/help/features','features','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1104,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1105,12,'admin/help/salesforce','admin/help/salesforce','salesforce','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1105,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1106,12,'admin/help/workbench_moderation','admin/help/workbench_moderation','workbench_moderation','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1106,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1107,1,'admin/workbench/drafts','admin/workbench/drafts','My Drafts','a:0:{}','system',-1,0,0,0,98,2,0,1,1107,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1108,1,'admin/workbench/needs-review','admin/workbench/needs-review','Needs Review','a:0:{}','system',-1,0,0,0,99,2,0,1,1108,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1109,1098,'admin/structure/features/create','admin/structure/features/create','Create feature','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:21:\"Create a new feature.\";}}','system',-1,0,0,0,10,4,0,1,21,1098,1109,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1110,1098,'admin/structure/features/manage','admin/structure/features/manage','Manage','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:28:\"Enable and disable features.\";}}','system',-1,0,0,0,0,4,0,1,21,1098,1110,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1111,1099,'node/%/moderation/view','node/%/moderation/view','Revisions','a:0:{}','system',-1,0,0,0,-1,3,0,5,1099,1111,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1112,64,'admin/config/services/salesforce','admin/config/services/salesforce','Salesforce','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:54:\"Authorize this website to communicate with Salesforce.\";}}','system',0,0,0,0,0,4,0,1,8,64,1112,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1113,1103,'admin/config/workbench/moderation','admin/config/workbench/moderation','Workbench Moderation','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:29:\"Configure content moderation.\";}}','system',0,0,0,0,0,4,0,1,8,1103,1113,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1114,1112,'admin/config/services/salesforce/authorize','admin/config/services/salesforce/authorize','Authorize','a:0:{}','system',-1,0,0,0,0,5,0,1,8,64,1112,1114,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1115,1113,'admin/config/workbench/moderation/check-permissions','admin/config/workbench/moderation/check-permissions','Check Permissions','a:0:{}','system',-1,0,0,0,10,5,0,1,8,1103,1113,1115,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1116,1113,'admin/config/workbench/moderation/transitions','admin/config/workbench/moderation/transitions','Transitions','a:0:{}','system',-1,0,0,0,0,5,0,1,8,1103,1113,1116,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1117,1113,'admin/config/workbench/moderation/general','admin/config/workbench/moderation/general','States','a:0:{}','system',-1,0,0,0,-1,5,0,1,8,1103,1113,1117,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1118,1098,'admin/structure/features/%/view','admin/structure/features/%/view','View','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:32:\"Display components of a feature.\";}}','system',-1,0,0,0,-10,4,0,1,21,1098,1118,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1119,1098,'admin/structure/features/%/recreate','admin/structure/features/%/recreate','Recreate','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:29:\"Recreate an existing feature.\";}}','system',-1,0,0,0,11,4,0,1,21,1098,1119,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

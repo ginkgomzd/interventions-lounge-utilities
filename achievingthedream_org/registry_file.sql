@@ -205,6 +205,7 @@ INSERT INTO `registry_file` VALUES ('sites/all/modules/faq_ask/faq_ask.install',
 INSERT INTO `registry_file` VALUES ('sites/all/modules/faq_ask/faq_ask.module','8eb31ccf0013cd841e0d14382b8489173a26382a7271c93018c572c66fda7dec');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/faq_ask/faq_ask.test','3d935adcfa1e34ff96ddd825dbfffb45c170c0beb29112ef3d7cb7fd5a20f3c3');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/faq_ask/faq_ask.unanswered.inc','5c86bf33a00fce9fe2612b95452920bc2d646d342dd00defddd66c10ce148555');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/features/tests/features.test','2ce22a5a4fbeb1d43e96d4686868ec888b58993542fc0e7704fcfc522c4bee19');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/feeds/feeds_ui/feeds_ui.test','6b6e263543e3e3a17a0b3afb35b84d45541a0a11b4db7a8481b42b5ce2d46bb8');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/feeds/includes/FeedsConfigurable.inc','82a6db7c8216040cbb47edb379dc9eb7bb1c08ba23523ee0665711ce57beaed3');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/feeds/includes/FeedsImporter.inc','0be9b1de10368f9bdebea4b3211e05e3c53107e605c2d6cc0ed3a9dc80483279');
@@ -408,6 +409,7 @@ INSERT INTO `registry_file` VALUES ('sites/all/modules/rules/ui/ui.controller.in
 INSERT INTO `registry_file` VALUES ('sites/all/modules/rules/ui/ui.core.inc','1d8ac8fec6fa59cd783653410cc233b033eaebd95b56736c34a2c085932e1077');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/rules/ui/ui.data.inc','8e13b09ec36ac828bb58bdeddf5903de0dea28ee31da7e8f7fdd2ed799f37f98');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/rules/ui/ui.plugins.inc','62815f3d11555a9682b088bdacb3c4ece1350d5e8ca2c9a9330a07929dddba36');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/salesforce/includes/salesforce.inc','17941dfd38af770cff94b669164aa8f416c6922b895e9209efb0cf3bff98a3b3');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/token/token.install','a05dc17c007e3fdef53360b2c0933dd1b55548a62bfe312f7b233be60dc59697');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/token/token.module','c71fa49e10b35428e38d7634cf2ce121331fdc59398362f86877acb8d250a9cb');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/token/token.pages.inc','5d59442c01eb4a597a70202e80b645e57b42e209f771f4f8aa4fbbd075f872ae');
@@ -728,6 +730,15 @@ INSERT INTO `registry_file` VALUES ('sites/all/modules/views_slideshow/theme/vie
 INSERT INTO `registry_file` VALUES ('sites/all/modules/views_slideshow/views_slideshow.module','66bd739ceacafb250368469d70150955c91f745469b4520c8c5e8027285da337');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/views_slideshow/views_slideshow.views.inc','3b3834220b91a373a74347683de8cbe45dfc19f8263b71dae368abaca45ec617');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/views_slideshow/views_slideshow_plugin_style_slideshow.inc','51dbe2d3aa647df37e1854e4504f8426e4d7fc79ed3d2309707ee865134a0d3f');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_history_link.inc','343dbdc044fa335314c255498720b80dc203f9ee10927697036c813906e8d5c1');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_links.inc','c6007fa3a7c179825e8fa2fa24efe0dcf7be953ac56b7c67e81c2f05996beea2');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_field_state.inc','7f7eae559f87614125617f2aeddf8cf293af03b3a7dd6b4aa52e096c7774b2c6');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_moderated_type.inc','19af994a9c310b4d0ea0dffab5550498006ec38c49b6885a6ed317d1e887ef4d');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_state.inc','97ca7d95516d65cc6c76d54dba7126d2576ec8149f71d4b4b720cf1e9ca5de38');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/includes/workbench_moderation_handler_filter_user_can_moderate.inc','8d08ff167860610f177238c682511d39abd3d2cf7b29b7c9d9fd79ec0e3025dd');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/tests/workbench_moderation.files.test','bfa3d20fe514f8d7393ed67473aea5a3e3a9ebc06c7c2d197a6c3618dbc0f1cb');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/tests/workbench_moderation.test','3ea6ef6f7fa103032341f786aa93c734d6b89454fc28d7ed6bda0a324e4d777a');
+INSERT INTO `registry_file` VALUES ('sites/all/modules/workbench_moderation/workbench_moderation.module','3ae3d6d2630dce9583ae5bec13d7231785bfa06eaa891aef9d5513bb2ac313ca');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/wysiwyg/tests/wysiwyg.test','351bd7ed3eb279052b92cd900ceaedb3baa97ab502eed61a390efed83d8cefd8');
 INSERT INTO `registry_file` VALUES ('sites/all/modules/wysiwyg/wysiwyg.module','467451f99511c5d877ede26358e67ea7219c07bdfd3eef347820b9ef5f16d0e2');
 /*!40000 ALTER TABLE `registry_file` ENABLE KEYS */;
