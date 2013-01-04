@@ -4,7 +4,7 @@
  */
 
 if ($argc < 2) {
-    error_out('Config file not specified. Usage: get_all_multiselect_values.php config_file');
+    error_out('Config file not specified');
 }
 $config = $argv[1];
 if (!is_readable($config)) {
