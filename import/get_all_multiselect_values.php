@@ -104,6 +104,7 @@ function get_multiselect_mapping () {
             'Developmental Education|Gatekeeper Courses' => array(
                 '#Developmental Education  and gateway courses in math  \(Placement\)#',
                 '#Revision of developmental and gateway math courses#',
+                '#Developmental Education and Gatekeeper Courses#',
             ),
             'Developmental Education|Gatekeeper Courses|Faculty Professional Development' => array(
                 '#Developmental education \& gatekeeper courses through faculty development#',
@@ -120,18 +121,20 @@ function get_multiselect_mapping () {
             'Student Success Course|Student Support Services' => array( // this value replaces
                 '#Student Success Course and Student Support Services#',  // this one
             ),
-            // get rid of some non-printing characters
             '' => array(
+                // get rid of some non-printing characters
                 '#' . chr(194) . chr(160) . '#',
+                // categories to remove
+                '#All Disciplines#',
+                '#All disciplines#',
+                '#Under-Prepared Students#',
+                '#Under-prepared Students#',
             ),
             // end hacks
 
             'Advising' => array(
                 '#Advisor#',
                 '#advising#',
-            ),
-            'All Disciplines' => array(
-                '#All disciplines#',
             ),
             'Budgeting Process' => array(
                 '#Budgeting process#',
@@ -155,6 +158,7 @@ function get_multiselect_mapping () {
                 '#FY experience#',
                 '#FYE#',
                 '#b\.        First year experience#',
+                '#Orientation#',
             ),
             'Faculty Professional Development' => array(
                 '#Secondary: Faculty Professional Development#',
@@ -164,11 +168,11 @@ function get_multiselect_mapping () {
                 '#Faculty Professional Devel(?!o)#',
                 '#Faculty Professional(?! Development)#',
                 '#Faculty(?! \w)#',
-            ),
-            'Professional and Character Development' => array( // should come before Developmental Education
+                '#(?<!Faculty )Professional Development#',
                 '#Professional and Character[^D]+Development#'
             ),
             'Developmental Education' => array( // should come after Faculty Profressional Development
+                '#Developmental[^E]+Education#',
                 '#Developmental Ed(?!u)#',
                 '#Developmental education math and study skills#',
                 '#Developmental education#',
@@ -186,6 +190,7 @@ function get_multiselect_mapping () {
                 '#Student success course#',
                 '#student success course#',
                 '#Student Success(?! Course)#',
+                '#a\.[^S]+Student[^S]+Success[^C]+Course#',
             ),
             'Student Support Services' => array(  // should go before Gatekeeper Courses
                 '#Student Support(?! Services)#',
@@ -206,11 +211,12 @@ function get_multiselect_mapping () {
                 '#(?<!\w )Courses?#', // matches Course or Courses
             ),
             'Information Systems' => array(
-                '#Improved Use of Data#',
+                '#information systems#',
+            ),
+            'Improved Use of Data' => array(
                 '#Improved use of data#',
                 '#improved use of data#',
-                '#Use of Data#',
-                '#information systems#',
+                '#(?<!Improved )Use of Data#',
             ),
             'Institutional Research' => array(
                 '#Improved use of institutional research#',
@@ -224,9 +230,11 @@ function get_multiselect_mapping () {
             'Mentoring' => array(
                 '#Mentors#',
             ),
+            'Student Engagement' => array(
+                '#Other: Student Engagement#',
+            ),
             'Other' => array(
                 '#Other \(new and transfer students[^p]+parents[^f]+family\)#', // Other (new and transfer students’ parents/family)
-                '#Other: Student Engagement#',
                 '#Other[^(]+\(Direct\)#',
                 '#Other[^(]+\(Indirect\)#',
                 '#Other[^(]+\(Marketing\)#',
@@ -238,20 +246,15 @@ function get_multiselect_mapping () {
                 '#Supplemental Instruction, including mandatory I-BEST Pathways#',
                 '#Supp Instr#',
                 '#Sup Instr#',
-                '#Supplemental(?! Instruction)#',
+                '#Supplemental[^I]+Instruction#',
                 '#supplemental instruction#',
             ),
             'Tutoring' => array(
                 '#tutoring#',
             ),
             'Internal Policy Review & Update' => array(
+                '#Internal[^P]+Policy[^R]+Review[^&]+&[^U]+Update#',
                 '#internal policy review and update#',
-                '#Internal(?! )#',
-                '#Policy Change#',
-                '#(?<!Internal )Policy Review /& Update#',
-            ),
-            'Under-Prepared Students' => array(
-                '#Under-prepared Students#',
             ),
             'Institutional Effectiveness' => array(
                 '#Institutional[^E]+Effectiveness#',
