@@ -140,7 +140,7 @@ INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,6
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,657,2078,'und',0,'2010 - present',NULL);
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,658,9314,'und',0,'2009 - present',NULL);
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,659,9329,'und',0,'2010 - present',NULL);
-INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,660,2082,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,660,9900,'und',0,'2006 - 2012',NULL);
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,661,7336,'und',0,'2011 - present',NULL);
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,662,9317,'und',0,'2007 - present',NULL);
 INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,663,2086,'und',0,'2009 - present',NULL);

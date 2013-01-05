@@ -39,7 +39,7 @@ INSERT INTO `node_type` VALUES ('college_profile','College Profile','node_conten
 INSERT INTO `node_type` VALUES ('college_profile_salesforce','College Profile Salesforce','node_content','node','for testing data pull from salesforce','',1,'Title',1,1,0,0,'college_profile_salesforce');
 INSERT INTO `node_type` VALUES ('faq','FAQ','faq','faq','A frequently asked question and its answer.','',1,'Question',0,1,1,0,'faq');
 INSERT INTO `node_type` VALUES ('hidden_page','Basic page (non-searchable)','node_content','node','By default, content of this type will be hidden from search engines. Use it when you want to be able to send people a URL, but still keep it relatively private.','',1,'Title',1,1,0,0,'basic_page_non_searchable_');
-INSERT INTO `node_type` VALUES ('intervention','Intervention','node_content','node','usually these will be imported via the Feeds module','',1,'Intervention Name',1,1,0,0,'intervention');
+INSERT INTO `node_type` VALUES ('mx_intervention','MX Intervention','node_content','node','usually these will be imported via the Feeds module','',1,'Intervention Name',1,1,0,0,'intervention');
 INSERT INTO `node_type` VALUES ('news','News','node_content','node','For inbound feeds','',1,'Title',1,1,0,0,'news');
 INSERT INTO `node_type` VALUES ('newsletter_component','Newsletter Component','node_content','node','','',1,'Title',1,1,0,0,'newsletter_component');
 INSERT INTO `node_type` VALUES ('organization','Organization','node_content','node','','',1,'Organization Name',1,1,0,0,'authoring_organization');

@@ -120,7 +120,7 @@ INSERT INTO `field_data_field_inline_image` VALUES ('node','hidden_page',0,3186,
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3350,7205,'und',0,1127,'','',3589,2088);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3389,7630,'und',0,1136,'','',250,376);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3449,7867,'und',0,1168,'','',380,248);
-INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3481,7944,'und',0,1269,'','',200,150);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3481,7944,'und',0,1479,'','',1809,1357);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3522,8092,'und',0,1191,'','',240,320);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3595,8299,'und',0,1257,'','San Jacinto College computer information technology graduate Stephen Funderburk is making it on his own as an associate degree holder who now works as a systems administrator for a company in Houston. Photo credit: Jeannie Peng-Armao, San Jacinto College marketing department.',1200,797);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3687,8545,'und',0,1282,'','Getting direction: Stories from today’s college student ',150,239);
@@ -133,10 +133,10 @@ INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3911,9101,'u
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3915,9109,'und',0,1333,'','',720,172);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3916,9112,'und',0,1319,'','',440,298);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3916,9112,'und',1,1320,'','',650,378);
-INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',0,1355,'','Robert Ramirez',300,300);
-INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',1,1356,'','Elizabeth Davis',300,300);
-INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',2,1357,'','Sam Jones',300,300);
-INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',3,1358,'','Sandra Valley Bagley',300,300);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',0,1464,'','Sandra Valley Bagley',200,200);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',1,1465,'','Elizabeth Davis',200,200);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',2,1466,'','Sam Jones ',200,200);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3959,9203,'und',3,1467,'','Robert Ramirez',200,200);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','press_release',0,3962,9210,'und',0,1363,'Sandra Valley Bagley','',1728,1152);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','press_release',0,3962,9210,'und',1,1364,'Elizabeth Davis','',900,1125);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','press_release',0,3962,9210,'und',2,1365,'Sam Jones','',795,957);
@@ -145,6 +145,8 @@ INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,3966,9237,'u
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3979,9324,'und',0,1451,'','',200,150);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,3998,9369,'und',0,1411,'','Disneyland Tickets',120,240);
 INSERT INTO `field_data_field_inline_image` VALUES ('node','news',0,4050,9637,'und',0,1446,'','',436,168);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,4080,9706,'und',0,1484,'','',150,150);
+INSERT INTO `field_data_field_inline_image` VALUES ('node','page',0,4082,9709,'und',0,1485,'','Birds of a Feather (example)',1952,3264);
 /*!40000 ALTER TABLE `field_data_field_inline_image` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

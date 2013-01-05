@@ -22,8 +22,8 @@ CREATE TABLE `linkchecker_block_custom` (
 
 LOCK TABLES `linkchecker_block_custom` WRITE;
 /*!40000 ALTER TABLE `linkchecker_block_custom` DISABLE KEYS */;
-INSERT INTO `linkchecker_block_custom` VALUES (1,1455);
-INSERT INTO `linkchecker_block_custom` VALUES (1,1456);
+INSERT INTO `linkchecker_block_custom` VALUES (1,1700);
+INSERT INTO `linkchecker_block_custom` VALUES (1,1766);
 INSERT INTO `linkchecker_block_custom` VALUES (3,225);
 INSERT INTO `linkchecker_block_custom` VALUES (3,256);
 INSERT INTO `linkchecker_block_custom` VALUES (3,278);

@@ -141,6 +141,8 @@ INSERT INTO `imagefield_focus_file` VALUES (1439,'0,0,200,200','');
 INSERT INTO `imagefield_focus_file` VALUES (1440,'0,0,200,200','');
 INSERT INTO `imagefield_focus_file` VALUES (1442,'0,0,200,200','');
 INSERT INTO `imagefield_focus_file` VALUES (1444,'0,0,200,200','');
+INSERT INTO `imagefield_focus_file` VALUES (1462,'0,0,460,595','');
+INSERT INTO `imagefield_focus_file` VALUES (1468,'0,0,100,100','');
 /*!40000 ALTER TABLE `imagefield_focus_file` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

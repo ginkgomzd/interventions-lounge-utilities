@@ -166,6 +166,14 @@ INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',
 INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,3975,9321,'und',0,1386,'','',150,150);
 INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4039,9577,'und',0,1430,'','',300,242);
 INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4039,9578,'und',0,1430,'','',300,242);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4039,9678,'und',0,1430,'','',300,242);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4065,9677,'und',0,1455,'','',300,199);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4065,9679,'und',0,1455,'','',300,199);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','slideshow_image',0,4065,9680,'und',0,1457,'','',300,212);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','resource',0,4076,9702,'und',0,1458,'','',470,606);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','resource',0,4076,9756,'und',0,1458,'','',470,606);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','resource',0,4104,9754,'und',0,1462,'','',460,595);
+INSERT INTO `field_revision_field_small_image` VALUES ('node','resource',0,4104,9755,'und',0,1462,'','',460,595);
 /*!40000 ALTER TABLE `field_revision_field_small_image` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

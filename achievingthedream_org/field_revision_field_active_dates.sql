@@ -289,6 +289,7 @@ INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile'
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,659,9328,'und',0,'2010 - present',NULL);
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,659,9329,'und',0,'2010 - present',NULL);
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,660,2082,'und',0,'2006 - present',NULL);
+INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,660,9900,'und',0,'2006 - 2012',NULL);
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,661,2083,'und',0,'2011 - present',NULL);
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,661,7336,'und',0,'2011 - present',NULL);
 INSERT INTO `field_revision_field_active_dates` VALUES ('node','college_profile',0,662,2085,'und',0,'2007 - present',NULL);

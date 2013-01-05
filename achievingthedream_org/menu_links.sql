@@ -43,7 +43,7 @@ CREATE TABLE `menu_links` (
   KEY `menu_plid_expand_child` (`menu_name`,`plid`,`expanded`,`has_children`),
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `router_path` (`router_path`(128))
-) ENGINE=InnoDB AUTO_INCREMENT=1098 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
+) ENGINE=InnoDB AUTO_INCREMENT=1116 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `menu_links` WRITE;
@@ -605,7 +605,7 @@ INSERT INTO `menu_links` VALUES ('management',889,871,'admin/config/workflow/rul
 INSERT INTO `menu_links` VALUES ('management',890,872,'admin/config/workflow/rules/reaction/manage/%/add/%','admin/config/workflow/rules/reaction/manage/%/add/%','','a:0:{}','system',0,0,0,0,0,7,0,1,8,65,863,865,872,890,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',891,0,'node/1958','node/%','Initiatives','a:0:{}','menu',0,0,1,0,-44,1,1,891,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',892,891,'node/1955','node/%','Leadership Imperative','a:0:{}','menu',0,0,0,0,-50,2,1,891,892,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('main-menu',893,891,'node/1956','node/%','Workforce Development','a:0:{}','menu',0,0,0,0,-49,2,1,891,893,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('main-menu',893,891,'node/1956','node/%','Programs of Study','a:0:{}','menu',0,0,0,0,-49,2,1,891,893,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',914,1,'admin/settings/aes','admin/settings/aes','AES settings','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:36:\"Configure the AES encryption module.\";}}','system',0,0,0,0,0,2,0,1,914,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',915,17,'user/%/password','user/%/password','View password','a:0:{}','system',-1,0,0,0,0,2,0,17,915,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',916,0,'node/add/atd-newsletter','node/add/atd-newsletter','ATD Newsletter','a:0:{}','system',0,0,0,0,0,1,0,916,0,0,0,0,0,0,0,0,0);
@@ -702,7 +702,7 @@ INSERT INTO `menu_links` VALUES ('main-menu',1044,891,'node/3481','node/%','Cata
 INSERT INTO `menu_links` VALUES ('main-menu',1045,891,'node/3558','node/%','Texas Peer Coaching','a:0:{}','menu',0,0,0,0,0,2,0,891,1045,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',1046,47,'admin/structure/menu/manage/menu-dream-2013','admin/structure/menu/manage/%','DREAM 2013','a:0:{}','menu',0,0,0,0,0,4,0,1,21,47,1046,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-dream-2013',1047,0,'node/3869','node/%','DREAM 2013 Home','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','menu',0,0,0,0,-50,1,1,1047,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1048,0,'faq_ask','faq_ask','Ask a Question','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',1,0,0,0,-43,1,1,1048,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1048,0,'faq_ask','faq_ask','Ask a Question','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',1,0,0,0,-42,1,1,1048,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',1049,0,'faq-page','faq-page','Frequently Asked Questions','a:0:{}','system',1,0,0,0,1,1,0,1049,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',1050,1049,'faq-page/list','faq-page/list','List','a:0:{}','system',-1,0,0,0,-10,2,0,1049,1050,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',1051,1049,'faq-page/order','faq-page/order','Order','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:78:\"Allows the user to configure the order of questions and answers on a FAQ page.\";}}','system',-1,0,0,0,-8,2,0,1049,1051,0,0,0,0,0,0,0,0);
@@ -716,28 +716,33 @@ INSERT INTO `menu_links` VALUES ('management',1058,1057,'admin/config/content/fa
 INSERT INTO `menu_links` VALUES ('management',1059,1057,'admin/config/content/faq/ask','admin/config/content/faq/ask','Experts','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:48:\"Allows the user to configure the Ask_FAQ module.\";}}','system',-1,0,0,0,-7,5,0,1,8,35,1057,1059,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',1060,1057,'admin/config/content/faq/general','admin/config/content/faq/general','General','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:78:\"Allows the user to configure the header and descriptive text for the FAQ page.\";}}','system',-1,0,0,0,-10,5,0,1,8,35,1057,1060,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',1061,1057,'admin/config/content/faq/questions','admin/config/content/faq/questions','Questions','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:79:\"Allows the user to configure the layout of questions and answers on a FAQ page.\";}}','system',-1,0,0,0,-9,5,0,1,8,35,1057,1061,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1074,0,'dream2013/faq_session_submission','dream2013/faq_session_submission','Session Submission FAQs','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','menu',1,0,0,0,-44,1,1,1074,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1074,0,'dream2013/faq_session_submission','dream2013/faq_session_submission','Session Submission FAQs','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','menu',1,0,0,0,-43,1,1,1074,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-webmaster-menu',1075,402,'node/add/faq','node/add/faq','Add FAQ','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','menu',0,0,0,0,-46,2,1,402,1075,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1077,588,'node/3596','node/%','Dreamfolio','a:0:{}','menu',0,0,0,0,-41,2,1,588,1077,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1079,483,'network/friends','network/friends','Friends','a:0:{}','system',0,0,0,0,-43,2,1,483,1079,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1080,0,'network/partners','network/partners','Partners','a:0:{}','system',1,0,0,0,-38,1,1,1080,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1081,477,'node/3760','node/%','DREAM Big for College','a:0:{}','menu',0,0,0,0,0,3,0,439,477,1081,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('navigation',1082,0,'node/add/intervention','node/add/intervention','Intervention','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:51:\"usually these will be imported via the Feeds module\";}}','system',0,0,0,0,0,1,0,1082,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1083,481,'node/3784','node/%','Leah Award','a:0:{}','menu',0,0,0,0,-45,3,0,439,481,1083,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1084,525,'admin/structure/panels/layouts','admin/structure/panels/layouts','Layouts','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:43:\"Add, edit or delete custom content layouts.\";}}','system',-1,0,0,0,0,4,0,1,21,525,1084,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1085,1084,'admin/structure/panels/layouts/add-flexible','admin/structure/panels/layouts/add-flexible','Add flexible layout','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1084,1085,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1086,1084,'admin/structure/panels/layouts/import','admin/structure/panels/layouts/import','Import','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1084,1086,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1087,1084,'admin/structure/panels/layouts/list','admin/structure/panels/layouts/list','List','a:0:{}','system',-1,0,0,0,-10,5,0,1,21,525,1084,1087,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1088,1087,'admin/structure/panels/layouts/list/%/edit','admin/structure/panels/layouts/list/%/edit','Edit','a:0:{}','system',-1,0,0,0,-10,6,0,1,21,525,1084,1087,1088,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1089,1087,'admin/structure/panels/layouts/list/%/export','admin/structure/panels/layouts/list/%/export','Export','a:0:{}','system',-1,0,0,0,0,6,0,1,21,525,1084,1087,1089,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1090,588,'node/267','node/%','Tools for all States','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','menu',0,0,0,0,-44,2,1,588,1090,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-dream-2013',1091,0,'node/3919','node/%','Registration Information','a:0:{}','menu',0,0,0,0,-49,1,1,1091,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1092,0,'node/3920','node/%','Hotel Information','a:0:{}','menu',0,0,0,0,-47,1,1,1092,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1093,0,'node/3921','node/%','Travel','a:0:{}','menu',0,0,0,0,-46,1,1,1093,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1094,0,'node/3924','node/%','Pre-Meeting Workshops','a:0:{}','menu',0,0,0,0,-48,1,1,1094,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1092,0,'node/3920','node/%','Hotel Information','a:0:{}','menu',0,0,0,0,-45,1,1,1092,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1093,0,'node/3921','node/%','Travel','a:0:{}','menu',0,0,0,0,-44,1,1,1093,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1094,0,'node/3924','node/%','Pre-Meeting Workshops','a:0:{}','menu',0,0,0,0,-46,1,1,1094,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1095,477,'node/3959','node/%','DREAMbassadors','a:0:{}','menu',0,0,0,0,0,3,0,439,477,1095,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('main-menu',1096,484,'node/3979','node/%','2013 Cohort RFP','a:0:{}','menu',0,0,0,0,0,3,0,441,484,1096,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('menu-dream-2013',1097,0,'node/3998','node/%','Disneyland Tickets','a:0:{}','menu',0,0,0,0,48,1,0,1097,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1097,0,'node/3998','node/%','Disneyland Tickets','a:0:{}','menu',0,0,0,0,-41,1,1,1097,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1098,0,'node/4062','node/%','Agenda At-A-Glance','a:0:{}','menu',0,0,1,0,-48,1,1,1098,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1099,1098,'node/4078','node/%','Emerging Ideas Exchange','a:0:{}','menu',0,0,0,0,-50,2,1,1098,1099,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1100,1098,'node/4079','node/%','Team Time','a:0:{}','menu',0,0,0,0,-49,2,1,1098,1100,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1101,1098,'node/4081','node/%','Plenaries and Spotlight Sessions','a:0:{}','menu',0,0,0,0,0,2,0,1098,1101,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('menu-dream-2013',1102,0,'node/4082','node/%','Birds of a Feather','a:0:{}','menu',0,0,0,0,-47,1,1,1102,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1109,0,'node/add/mx-intervention','node/add/mx-intervention','MX Intervention','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:51:\"usually these will be imported via the Feeds module\";}}','system',0,0,0,0,0,1,0,1109,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1110,525,'admin/structure/panels/layouts','admin/structure/panels/layouts','Layouts','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:43:\"Add, edit or delete custom content layouts.\";}}','system',-1,0,0,0,0,4,0,1,21,525,1110,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1111,1110,'admin/structure/panels/layouts/add-flexible','admin/structure/panels/layouts/add-flexible','Add flexible layout','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1110,1111,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1112,1110,'admin/structure/panels/layouts/import','admin/structure/panels/layouts/import','Import','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1110,1112,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1113,1110,'admin/structure/panels/layouts/list','admin/structure/panels/layouts/list','List','a:0:{}','system',-1,0,0,0,-10,5,0,1,21,525,1110,1113,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1114,1113,'admin/structure/panels/layouts/list/%/edit','admin/structure/panels/layouts/list/%/edit','Edit','a:0:{}','system',-1,0,0,0,-10,6,0,1,21,525,1110,1113,1114,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1115,1113,'admin/structure/panels/layouts/list/%/export','admin/structure/panels/layouts/list/%/export','Export','a:0:{}','system',-1,0,0,0,0,6,0,1,21,525,1110,1113,1115,0,0,0,0);
 /*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

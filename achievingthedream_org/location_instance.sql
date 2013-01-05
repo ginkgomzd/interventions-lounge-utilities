@@ -1567,6 +1567,7 @@ INSERT INTO `location_instance` VALUES (314,9554,0,'',528);
 INSERT INTO `location_instance` VALUES (314,9555,0,'',529);
 INSERT INTO `location_instance` VALUES (315,9556,0,'',530);
 INSERT INTO `location_instance` VALUES (315,9557,0,'',531);
+INSERT INTO `location_instance` VALUES (660,9900,0,'',295);
 /*!40000 ALTER TABLE `location_instance` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

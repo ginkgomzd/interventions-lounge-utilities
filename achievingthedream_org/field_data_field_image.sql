@@ -39,8 +39,8 @@ CREATE TABLE `field_data_field_image` (
 LOCK TABLES `field_data_field_image` WRITE;
 /*!40000 ALTER TABLE `field_data_field_image` DISABLE KEYS */;
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,51,6127,'und',0,761,'Beverly R. Fletcher, Ed.D.','',200,200);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,52,9166,'und',0,767,'Katie Loovis','',200,200);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,87,7889,'und',0,770,'Lauren Lewis','',200,200);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,52,9712,'und',0,767,'Katie Loovis','',200,200);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,87,9782,'und',0,1471,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','organization',0,109,2180,'und',0,313,'','',273,113);
 INSERT INTO `field_data_field_image` VALUES ('node','organization',0,116,3717,'und',0,498,'','',504,160);
 INSERT INTO `field_data_field_image` VALUES ('node','organization',0,122,2179,'und',0,314,'','',273,113);
@@ -73,7 +73,7 @@ INSERT INTO `field_data_field_image` VALUES ('node','person',0,326,2731,'und',0,
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,327,9597,'und',0,206,'','',378,476);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,328,9599,'und',0,1432,'','',3041,2999);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,329,2755,'und',0,210,'','',2000,3000);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,330,2733,'und',0,211,'','',2000,3000);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,330,9911,'und',0,211,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,331,547,'und',0,212,'','',150,225);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,332,2752,'und',0,213,'','',301,451);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,333,9191,'und',0,215,'','',2000,3000);
@@ -99,7 +99,7 @@ INSERT INTO `field_data_field_image` VALUES ('node','organization',0,371,2554,'u
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,374,9331,'und',0,238,'','',326,451);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,375,9193,'und',0,240,'','',331,408);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,376,9245,'und',0,241,'','',2000,3000);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,377,2764,'und',0,242,'','',2000,3000);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,377,9707,'und',0,1461,'','',283,390);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,378,8434,'und',0,243,'','',2336,3504);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,379,9414,'und',0,246,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,380,9326,'und',0,1382,'','',960,1440);
@@ -109,14 +109,14 @@ INSERT INTO `field_data_field_image` VALUES ('node','person',0,385,9593,'und',0,
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,386,2757,'und',0,255,'','',301,451);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,387,2703,'und',0,256,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,388,2754,'und',0,257,'','',2000,3000);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,389,644,'und',0,258,'','',1241,1579);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,389,9816,'und',0,258,'','',1241,1579);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,391,2715,'und',0,279,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,392,2758,'und',0,260,'','',371,637);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,393,2767,'und',0,261,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,394,651,'und',0,262,'','',160,146);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,395,2717,'und',0,264,'','',301,376);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,396,655,'und',0,266,'','',448,630);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,397,2679,'und',0,267,'','',2000,3000);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,397,9684,'und',0,267,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,398,2749,'und',0,268,'','',288,412);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,399,2747,'und',0,269,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,400,2742,'und',0,270,'','',2000,3000);
@@ -254,7 +254,7 @@ INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,655,2510
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,657,2078,'und',0,445,'','',287,200);
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,658,9314,'und',0,446,'','',287,200);
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,659,9329,'und',0,447,'','',287,200);
-INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,660,2082,'und',0,448,'','',287,200);
+INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,660,9900,'und',0,448,'','',287,200);
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,661,7336,'und',0,486,'','',287,200);
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,662,9317,'und',0,450,'','',287,200);
 INSERT INTO `field_data_field_image` VALUES ('node','college_profile',0,663,2086,'und',0,451,'','',287,200);
@@ -321,7 +321,7 @@ INSERT INTO `field_data_field_image` VALUES ('node','person',0,1178,2709,'und',0
 INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,1477,3185,'und',0,714,'','',780,321);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,1481,3511,'und',0,777,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,1482,8556,'und',0,775,'','',200,200);
-INSERT INTO `field_data_field_image` VALUES ('node','person',0,1483,3506,'und',0,773,'','',200,200);
+INSERT INTO `field_data_field_image` VALUES ('node','person',0,1483,9781,'und',0,1475,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,1484,9622,'und',0,1437,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,1500,3211,'und',0,723,'','',180,225);
 INSERT INTO `field_data_field_image` VALUES ('node','article',0,1577,4912,'und',0,751,'','',3648,2736);
@@ -375,11 +375,12 @@ INSERT INTO `field_data_field_image` VALUES ('node','person',0,3932,9242,'und',0
 INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,3960,9204,'und',0,1359,'','',780,365);
 INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,3965,9241,'und',0,1379,'','',780,365);
 INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,3975,9321,'und',0,1388,'','',780,365);
-INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,4039,9578,'und',0,1429,'','',780,480);
+INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,4039,9678,'und',0,1429,'','',780,480);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,4041,9596,'und',0,1431,'','',2000,3000);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,4046,9626,'und',0,1440,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,4047,9628,'und',0,1442,'','',200,200);
 INSERT INTO `field_data_field_image` VALUES ('node','person',0,4048,9629,'und',0,1444,'','',200,200);
+INSERT INTO `field_data_field_image` VALUES ('node','slideshow_image',0,4065,9680,'und',0,1456,'','',780,551);
 /*!40000 ALTER TABLE `field_data_field_image` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

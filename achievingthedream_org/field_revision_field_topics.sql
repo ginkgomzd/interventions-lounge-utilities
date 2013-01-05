@@ -572,6 +572,15 @@ INSERT INTO `field_revision_field_topics` VALUES ('node','resource',0,3952,9188,
 INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4051,9639,'und',0,13);
 INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4051,9640,'und',0,13);
 INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4051,9641,'und',0,13);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4067,9687,'und',0,21);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4068,9688,'und',0,13);
+INSERT INTO `field_revision_field_topics` VALUES ('node','resource',0,4076,9756,'und',0,19);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4083,9758,'und',0,11);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4085,9757,'und',0,21);
+INSERT INTO `field_revision_field_topics` VALUES ('node','resource',0,4104,9754,'und',0,53);
+INSERT INTO `field_revision_field_topics` VALUES ('node','resource',0,4104,9755,'und',0,53);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4105,9769,'und',0,18);
+INSERT INTO `field_revision_field_topics` VALUES ('node','news',0,4105,9770,'und',0,18);
 /*!40000 ALTER TABLE `field_revision_field_topics` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -432,6 +432,10 @@ INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,378
 INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,3789,8861,'und',0,16);
 INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,3952,9187,'und',0,30);
 INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,3952,9188,'und',0,30);
+INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,4076,9702,'und',0,16);
+INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,4076,9756,'und',0,16);
+INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,4104,9754,'und',0,16);
+INSERT INTO `field_revision_field_resource_type` VALUES ('node','resource',0,4104,9755,'und',0,16);
 /*!40000 ALTER TABLE `field_revision_field_resource_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

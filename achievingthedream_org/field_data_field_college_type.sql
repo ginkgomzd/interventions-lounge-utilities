@@ -181,7 +181,7 @@ INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,6
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,658,9314,'und',1,34);
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,659,9329,'und',0,33);
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,659,9329,'und',1,34);
-INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,660,2082,'und',0,34);
+INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,660,9900,'und',0,35);
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,661,7336,'und',0,34);
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,662,9317,'und',0,33);
 INSERT INTO `field_data_field_college_type` VALUES ('node','college_profile',0,662,9317,'und',1,34);

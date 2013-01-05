@@ -21,7 +21,7 @@ CREATE TABLE `queue` (
   PRIMARY KEY (`item_id`),
   KEY `name_created` (`name`,`created`),
   KEY `expire` (`expire`)
-) ENGINE=InnoDB AUTO_INCREMENT=6436 DEFAULT CHARSET=utf8 COMMENT='Stores items in queues.';
+) ENGINE=InnoDB AUTO_INCREMENT=14605 DEFAULT CHARSET=utf8 COMMENT='Stores items in queues.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `queue` WRITE;

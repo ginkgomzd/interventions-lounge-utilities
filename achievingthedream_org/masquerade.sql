@@ -23,6 +23,7 @@ CREATE TABLE `masquerade` (
 
 LOCK TABLES `masquerade` WRITE;
 /*!40000 ALTER TABLE `masquerade` DISABLE KEYS */;
+INSERT INTO `masquerade` VALUES ('Ekf7CKCZrCejtjr6BAVuXmh3mrdg2f3CcKvMMmkLHeE',86,12);
 /*!40000 ALTER TABLE `masquerade` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

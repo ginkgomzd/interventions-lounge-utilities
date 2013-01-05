@@ -742,6 +742,7 @@ INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile'
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,660,1338,'und',0,34);
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,660,1747,'und',0,34);
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,660,2082,'und',0,34);
+INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,660,9900,'und',0,35);
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,661,1140,'und',0,34);
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,661,1403,'und',0,34);
 INSERT INTO `field_revision_field_college_type` VALUES ('node','college_profile',0,661,1756,'und',0,34);

@@ -61,10 +61,9 @@ INSERT INTO `views_view` VALUES (32,'newsletter_inside_atd','','default','node',
 INSERT INTO `views_view` VALUES (33,'newsletter_achieving_success','','default','node','Newsletter: Achieving Success',7);
 INSERT INTO `views_view` VALUES (34,'nodequeue_12','Display a list of all nodes in queue \'WalMart Grant News Coverage\'','nodequeue','node','WalMart Grant News Coverage',0);
 INSERT INTO `views_view` VALUES (35,'faq','FAQ listings','default','node','FAQ',7);
-INSERT INTO `views_view` VALUES (36,'interventions','','default','node','Interventions by Content Area',7);
-INSERT INTO `views_view` VALUES (37,'interventions_by_target','','default','node','Interventions by Target',7);
-INSERT INTO `views_view` VALUES (38,'interventions_by_type','','default','node','Interventions by Type',7);
-INSERT INTO `views_view` VALUES (39,'interventions_filters','','default','node','Interventions Filters',7);
+INSERT INTO `views_view` VALUES (36,'interventions','','mx intervention','node','Interventions by Content Area',7);
+INSERT INTO `views_view` VALUES (37,'interventions_by_target','','mx intervention','node','Interventions by Target',7);
+INSERT INTO `views_view` VALUES (39,'interventions_filters','','mx intervention','node','Interventions Filters',7);
 INSERT INTO `views_view` VALUES (40,'nodequeue_13','Display a list of all nodes in queue \'Best of DREAM\'','nodequeue','node','Slideshow: Best of DREAM',0);
 /*!40000 ALTER TABLE `views_view` ENABLE KEYS */;
 UNLOCK TABLES;

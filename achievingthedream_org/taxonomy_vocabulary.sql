@@ -36,7 +36,6 @@ INSERT INTO `taxonomy_vocabulary` VALUES (6,'Org Type','org_type','to distinguis
 INSERT INTO `taxonomy_vocabulary` VALUES (7,'Newsletter Section','newsletter_section','for grouping items into sections, within the ATD newsletter',0,'taxonomy',0);
 INSERT INTO `taxonomy_vocabulary` VALUES (8,'Newsletter Edition','newsletter_edition','',0,'taxonomy',0);
 INSERT INTO `taxonomy_vocabulary` VALUES (9,'FAQ Category','faq_category','',0,'taxonomy',0);
-INSERT INTO `taxonomy_vocabulary` VALUES (10,'Intervention Type','intervention_type','for classifying interventions',0,'taxonomy',0);
 /*!40000 ALTER TABLE `taxonomy_vocabulary` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

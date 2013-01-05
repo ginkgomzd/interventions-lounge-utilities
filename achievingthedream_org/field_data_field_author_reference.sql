@@ -245,6 +245,8 @@ INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,3520
 INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,3618,8369,'und',0,122);
 INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,3789,8861,'und',0,122);
 INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,3952,9188,'und',0,109);
+INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,4076,9756,'und',0,109);
+INSERT INTO `field_data_field_author_reference` VALUES ('node','resource',0,4104,9755,'und',0,109);
 /*!40000 ALTER TABLE `field_data_field_author_reference` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

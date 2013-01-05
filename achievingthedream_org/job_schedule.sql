@@ -31,18 +31,18 @@ CREATE TABLE `job_schedule` (
   KEY `name_type` (`name`,`type`),
   KEY `next` (`next`),
   KEY `scheduled` (`scheduled`)
-) ENGINE=InnoDB AUTO_INCREMENT=53670 DEFAULT CHARSET=utf8 COMMENT='Schedule of jobs to be executed.';
+) ENGINE=InnoDB AUTO_INCREMENT=59323 DEFAULT CHARSET=utf8 COMMENT='Schedule of jobs to be executed.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `job_schedule` WRITE;
 /*!40000 ALTER TABLE `job_schedule` DISABLE KEYS */;
-INSERT INTO `job_schedule` VALUES (53663,'feeds_source_import','have_fun_do_good',0,0,'',NULL,0,0,1354296777,1,1354296777,0);
-INSERT INTO `job_schedule` VALUES (53664,'feeds_source_import','katya_feed',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
-INSERT INTO `job_schedule` VALUES (53665,'feeds_source_import','achieving_dream',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
-INSERT INTO `job_schedule` VALUES (53666,'feeds_source_import','founding_partners',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
-INSERT INTO `job_schedule` VALUES (53667,'feeds_source_import','anthony_carnevale',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
-INSERT INTO `job_schedule` VALUES (53668,'feeds_importer_expire','have_fun_do_good',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
-INSERT INTO `job_schedule` VALUES (53669,'feeds_importer_expire','katya_feed',0,3600,'',NULL,0,0,1354296777,1,1354300377,0);
+INSERT INTO `job_schedule` VALUES (59316,'feeds_source_import','have_fun_do_good',0,0,'',NULL,0,0,1357316147,1,1357316147,0);
+INSERT INTO `job_schedule` VALUES (59317,'feeds_source_import','katya_feed',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
+INSERT INTO `job_schedule` VALUES (59318,'feeds_source_import','founding_partners',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
+INSERT INTO `job_schedule` VALUES (59319,'feeds_source_import','achieving_dream',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
+INSERT INTO `job_schedule` VALUES (59320,'feeds_source_import','anthony_carnevale',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
+INSERT INTO `job_schedule` VALUES (59321,'feeds_importer_expire','katya_feed',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
+INSERT INTO `job_schedule` VALUES (59322,'feeds_importer_expire','have_fun_do_good',0,3600,'',NULL,0,0,1357316147,1,1357319747,0);
 /*!40000 ALTER TABLE `job_schedule` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

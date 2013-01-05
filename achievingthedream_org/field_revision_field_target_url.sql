@@ -129,6 +129,10 @@ INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0
 INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,3975,9321,'und',0,'www.achievingthedream.org/press_release/14_achieving_the_dream_institutions_earn_leader_college_distinction',NULL,'a:0:{}');
 INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4039,9577,'und',0,'http://achievingthedream.org/press_release/11_states_to_work_toward_improving_student_success_at_community_colleges',NULL,'a:0:{}');
 INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4039,9578,'und',0,'http://achievingthedream.org/press_release/11_states_to_work_toward_improving_student_success_at_community_colleges',NULL,'a:0:{}');
+INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4039,9678,'und',0,'http://achievingthedream.org/press_release/11_states_to_work_toward_improving_student_success_at_community_colleges',NULL,'a:0:{}');
+INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4065,9677,'und',0,'http://www.achievingthedream.org/join/2013_cohort_RFP',NULL,'a:0:{}');
+INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4065,9679,'und',0,'http://www.achievingthedream.org/join/2013_cohort_RFP',NULL,'a:0:{}');
+INSERT INTO `field_revision_field_target_url` VALUES ('node','slideshow_image',0,4065,9680,'und',0,'http://www.achievingthedream.org/join/2013_cohort_RFP',NULL,'a:0:{}');
 /*!40000 ALTER TABLE `field_revision_field_target_url` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

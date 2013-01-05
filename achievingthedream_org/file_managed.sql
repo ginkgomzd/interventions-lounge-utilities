@@ -26,7 +26,7 @@ CREATE TABLE `file_managed` (
   KEY `uid` (`uid`),
   KEY `status` (`status`),
   KEY `timestamp` (`timestamp`)
-) ENGINE=InnoDB AUTO_INCREMENT=1452 DEFAULT CHARSET=utf8 COMMENT='Stores information for uploaded files.';
+) ENGINE=InnoDB AUTO_INCREMENT=1486 DEFAULT CHARSET=utf8 COMMENT='Stores information for uploaded files.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `file_managed` WRITE;
@@ -187,7 +187,7 @@ INSERT INTO `file_managed` VALUES (174,12,'George Cushman.jpg','public://people/
 INSERT INTO `file_managed` VALUES (175,12,'Joaquin Castro.jpg','public://people/Joaquin Castro.jpg','image/jpeg',93614,1,1323211365);
 INSERT INTO `file_managed` VALUES (176,12,'James Comer.jpg','public://people/James Comer.jpg','image/jpeg',26106,1,1323211651);
 INSERT INTO `file_managed` VALUES (178,12,'AssistantDirectorofProgramsLearningEvents.pdf','public://files/AssistantDirectorofProgramsLearningEvents.pdf','application/pdf',166735,1,1323213464);
-INSERT INTO `file_managed` VALUES (186,0,'gmap_markers.js','public://js/gmap_markers.js','application/x-javascript',3974,1,1349276343);
+INSERT INTO `file_managed` VALUES (186,0,'gmap_markers.js','public://js/gmap_markers.js','application/x-javascript',3974,1,1356107230);
 INSERT INTO `file_managed` VALUES (190,1,'2007-06_ATD_MI_colleges.pdf','public://files/2007-06_ATD_MI_colleges.pdf','application/pdf',262326,1,1323363732);
 INSERT INTO `file_managed` VALUES (191,1,'michigan_state_workplan.pdf','public://michigan_state_workplan.pdf','application/pdf',182398,1,1323366761);
 INSERT INTO `file_managed` VALUES (192,1,'michigan_state_profile.pdf','public://michigan_state_profile.pdf','application/pdf',67201,1,1323366883);
@@ -1120,7 +1120,6 @@ INSERT INTO `file_managed` VALUES (1264,13,'State_Policy_Network_RFP_Final.doc',
 INSERT INTO `file_managed` VALUES (1265,13,'student_voices.pdf','public://resources/student_voices.pdf','application/pdf',1324665,1,1345469155);
 INSERT INTO `file_managed` VALUES (1266,13,'Student_Voices.JPG','public://resources/thumbs/Student_Voices.JPG','image/jpeg',80380,1,1345469155);
 INSERT INTO `file_managed` VALUES (1267,13,'Increasing_Latino_College_Completion.pdf','public://resources/Increasing_Latino_College_Completion.pdf','application/pdf',265857,1,1345496653);
-INSERT INTO `file_managed` VALUES (1269,13,'Catalyst-Proposal-Submission.jpg','public://images/Catalyst-Proposal-Submission_0.jpg','image/jpeg',8353,1,1345733407);
 INSERT INTO `file_managed` VALUES (1270,13,'ATD Catalyst Fund RFP_FINAL.doc','public://ATD Catalyst Fund RFP_FINAL.doc','application/msword',271360,1,1345744703);
 INSERT INTO `file_managed` VALUES (1271,13,'ATD Catalyst Fund RFP_Templates_ENTER COLLEGE NAME_DATE.xls','public://ATD Catalyst Fund RFP_Templates_ENTER COLLEGE NAME_DATE.xls','application/vnd.ms-excel',50688,1,1345745509);
 INSERT INTO `file_managed` VALUES (1272,13,'August_LC_CC_PowerPoint3_compressed(1).pdf','public://August_LC_CC_PowerPoint3_compressed(1).pdf','application/pdf',417810,1,1345745509);
@@ -1184,10 +1183,6 @@ INSERT INTO `file_managed` VALUES (1351,13,'Director of Program and Policy.pdf',
 INSERT INTO `file_managed` VALUES (1352,13,'JFF report.JPG','public://resources/thumbs/JFF report.JPG','image/jpeg',59288,1,1351691359);
 INSERT INTO `file_managed` VALUES (1353,13,'Associate Director of Data Coaching & Development.pdf','public://Associate Director of Data Coaching & Development_0.pdf','application/pdf',176800,1,1351693233);
 INSERT INTO `file_managed` VALUES (1354,13,'CFerrelphoto.JPG','public://people/CFerrelphoto.JPG','image/jpeg',1152211,1,1351694199);
-INSERT INTO `file_managed` VALUES (1355,1,'ramirez.jpg','public://images/ramirez.jpg','image/jpeg',65217,1,1351793440);
-INSERT INTO `file_managed` VALUES (1356,1,'davis.jpg','public://images/davis.jpg','image/jpeg',46876,1,1351793440);
-INSERT INTO `file_managed` VALUES (1357,1,'jones.jpg','public://images/jones.jpg','image/jpeg',36409,1,1351793440);
-INSERT INTO `file_managed` VALUES (1358,1,'bagley.jpg','public://images/bagley.jpg','image/jpeg',68600,1,1351793440);
 INSERT INTO `file_managed` VALUES (1359,1,'cellist_slide.jpg','public://slideshow/cellist_slide.jpg','image/jpeg',151681,1,1351795168);
 INSERT INTO `file_managed` VALUES (1360,1,'cellist_slide-001.jpg','public://slideshow/cellist_slide-001.jpg','image/jpeg',25976,1,1351795168);
 INSERT INTO `file_managed` VALUES (1361,12,'Release - DREAMbassadorsFINAL.pdf','public://press_releases/Release - DREAMbassadorsFINAL.pdf','application/pdf',235015,1,1351858382);
@@ -1257,6 +1252,30 @@ INSERT INTO `file_managed` VALUES (1446,13,'dreambigblog.jpg','public://images/d
 INSERT INTO `file_managed` VALUES (1447,13,'pspn.jpg','public://images/pspn.jpg','image/jpeg',66549,1,1354135059);
 INSERT INTO `file_managed` VALUES (1448,12,'TexasPeerCoachingInitiativeOverviewREVISED.pdf','public://TexasPeerCoachingInitiativeOverviewREVISED.pdf','application/pdf',277042,1,1354201313);
 INSERT INTO `file_managed` VALUES (1451,12,'Submit-2013-RFP.jpg','public://images/Submit-2013-RFP_0.jpg','image/jpeg',11640,1,1354204886);
+INSERT INTO `file_managed` VALUES (1454,13,'RFP Slideshow image.jpg','public://slideshow/RFP Slideshow image_1.jpg','image/jpeg',68667,1,1354558531);
+INSERT INTO `file_managed` VALUES (1455,13,'RFP Slideshow image.jpg','public://slideshow/RFP Slideshow image_2.jpg','image/jpeg',13782,1,1354558531);
+INSERT INTO `file_managed` VALUES (1456,13,'rfp.jpg','public://slideshow/rfp.jpg','image/jpeg',94240,1,1354558910);
+INSERT INTO `file_managed` VALUES (1457,13,'rfp.jpg','public://slideshow/rfp_0.jpg','image/jpeg',19229,1,1354558910);
+INSERT INTO `file_managed` VALUES (1458,13,'ahead of the curve.JPG','public://resources/thumbs/ahead of the curve.JPG','image/jpeg',59873,1,1354915830);
+INSERT INTO `file_managed` VALUES (1459,12,'DREAM Big for College Student Design Contest Submissions and Eligibility FINAL.pdf','public://DREAM Big for College Student Design Contest Submissions and Eligibility FINAL.pdf','application/pdf',307214,1,1355165364);
+INSERT INTO `file_managed` VALUES (1461,12,'Manning headshot 6.12.png','public://people/Manning headshot 6.12.png','image/png',288004,1,1355167676);
+INSERT INTO `file_managed` VALUES (1462,13,'Cornerstones of Completion.JPG','public://resources/thumbs/Cornerstones of Completion.JPG','image/jpeg',50852,1,1355497461);
+INSERT INTO `file_managed` VALUES (1464,13,'Ambassador_SBagley.jpg','public://images/Ambassador_SBagley.jpg','image/jpeg',43094,1,1355845812);
+INSERT INTO `file_managed` VALUES (1465,13,'AmbassadorEDavis.jpg','public://images/AmbassadorEDavis.jpg','image/jpeg',37920,1,1355845812);
+INSERT INTO `file_managed` VALUES (1466,13,'AmbassadorSJones.jpg','public://images/AmbassadorSJones.jpg','image/jpeg',37788,1,1355845812);
+INSERT INTO `file_managed` VALUES (1467,13,'Ambassasdor_RRamirez.jpg','public://images/Ambassasdor_RRamirez.jpg','image/jpeg',39938,1,1355845812);
+INSERT INTO `file_managed` VALUES (1468,13,'LlewisThumb copy.jpg','public://people/LlewisThumb copy.jpg','image/jpeg',30218,1,1355867957);
+INSERT INTO `file_managed` VALUES (1470,13,'Lauren Lewis Bio_121812.pdf','public://bios/Lauren Lewis Bio_121812.pdf','application/pdf',198752,1,1355867957);
+INSERT INTO `file_managed` VALUES (1471,13,'LLewis.jpg','public://people/LLewis.jpg','image/jpeg',38231,1,1355868038);
+INSERT INTO `file_managed` VALUES (1472,13,'Lauren Lewis Bio_121812.pdf','public://bios/Lauren Lewis Bio_121812_0.pdf','application/pdf',198755,1,1355868116);
+INSERT INTO `file_managed` VALUES (1473,13,'Mia Ramos_Bio_121812.pdf','public://bios/Mia Ramos_Bio_121812.pdf','application/pdf',110722,1,1355868297);
+INSERT INTO `file_managed` VALUES (1474,13,'MRamos_thumb.jpg','public://people/MRamos_thumb.jpg','image/jpeg',29719,1,1355868297);
+INSERT INTO `file_managed` VALUES (1475,13,'MRamos.jpg','public://people/MRamos.jpg','image/jpeg',14292,1,1355868314);
+INSERT INTO `file_managed` VALUES (1479,13,'Catalyst.jpg','public://images/Catalyst.jpg','image/jpeg',945663,1,1355946585);
+INSERT INTO `file_managed` VALUES (1481,13,'Achieving the Dream Round One TAACCCT Grantees.pdf','public://Achieving the Dream Round One TAACCCT Grantees_0.pdf','application/pdf',267374,1,1356036463);
+INSERT INTO `file_managed` VALUES (1482,12,'Chief of Staff.pdf','public://Chief of Staff.pdf','application/pdf',207669,1,1356108790);
+INSERT INTO `file_managed` VALUES (1484,1,'video_melissa_150px.JPG','public://images/video_melissa_150px.JPG','image/jpeg',11738,1,1357227790);
+INSERT INTO `file_managed` VALUES (1485,1,'bof_sample_whiteboard.jpg','public://images/bof_sample_whiteboard.jpg','image/jpeg',928011,1,1357237433);
 /*!40000 ALTER TABLE `file_managed` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
