@@ -1,0 +1,233 @@
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+DROP TABLE IF EXISTS `field_data_field_active_dates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `field_data_field_active_dates` (
+  `entity_type` varchar(128) NOT NULL DEFAULT '' COMMENT 'The entity type this data is attached to',
+  `bundle` varchar(128) NOT NULL DEFAULT '' COMMENT 'The field instance bundle to which this row belongs, used when deleting a field instance',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A boolean indicating whether this data item has been deleted',
+  `entity_id` int(10) unsigned NOT NULL COMMENT 'The entity id this data is attached to',
+  `revision_id` int(10) unsigned DEFAULT NULL COMMENT 'The entity revision id this data is attached to, or NULL if the entity type is not versioned',
+  `language` varchar(32) NOT NULL DEFAULT '' COMMENT 'The language for this data item.',
+  `delta` int(10) unsigned NOT NULL COMMENT 'The sequence number for this data item, used for multi-value fields',
+  `field_active_dates_value` varchar(255) DEFAULT NULL,
+  `field_active_dates_format` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`entity_type`,`entity_id`,`deleted`,`delta`,`language`),
+  KEY `entity_type` (`entity_type`),
+  KEY `bundle` (`bundle`),
+  KEY `deleted` (`deleted`),
+  KEY `entity_id` (`entity_id`),
+  KEY `revision_id` (`revision_id`),
+  KEY `language` (`language`),
+  KEY `field_active_dates_format` (`field_active_dates_format`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Data storage for field 35 (field_active_dates)';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+LOCK TABLES `field_data_field_active_dates` WRITE;
+/*!40000 ALTER TABLE `field_data_field_active_dates` DISABLE KEYS */;
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,544,3074,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,545,3166,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,546,3208,'und',0,'2006 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,547,1950,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,548,1952,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,549,1953,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,550,2299,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,551,9303,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,552,1956,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,553,2497,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,554,2637,'und',0,'2004 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,555,2499,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,556,9304,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,557,2476,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,558,1967,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,559,9307,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,560,2867,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,561,8087,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,562,2868,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,563,1978,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,564,1980,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,565,2559,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,566,9308,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,567,2862,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,568,1984,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,569,2557,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,570,1986,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,571,2556,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,572,1988,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,573,1989,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,574,1990,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,575,2781,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,576,9309,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,577,2860,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,578,2553,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,579,1996,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,580,1997,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,581,1998,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,582,9310,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,583,2632,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,584,2001,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,585,2002,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,586,2549,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,587,2668,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,588,2008,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,589,2009,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,590,2011,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,591,2014,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,592,2015,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,593,2544,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,594,2018,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,595,2019,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,596,2020,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,597,2021,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,598,2022,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,599,2023,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,600,2105,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,601,2777,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,602,2542,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,603,2028,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,604,2540,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,605,2030,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,606,2031,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,607,2537,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,608,2033,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,609,9312,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,610,3846,'und',0,'2004 - 2009; 2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,611,2036,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,612,3310,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,613,2038,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,614,2534,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,615,2040,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,616,2043,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,617,2530,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,618,3194,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,619,2046,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,620,2047,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,621,2528,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,622,2049,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,623,2050,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,634,2163,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,635,2298,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,636,2056,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,637,2524,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,638,2058,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,639,2522,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,640,2060,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,641,2061,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,642,2519,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,643,2075,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,644,2680,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,645,2066,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,646,2517,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,647,2068,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,648,2514,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,649,2512,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,650,2638,'und',0,'2004 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,651,2072,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,652,9313,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,653,2832,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,654,2511,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,655,2510,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,657,2078,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,658,9314,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,659,9329,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,660,9900,'und',0,'2006 - 2012',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,661,7336,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,662,9317,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,663,2086,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,664,2087,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,665,2300,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,666,2494,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,667,2091,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,668,3387,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,669,2094,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,670,2869,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,671,2097,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,672,2098,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,673,2507,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,674,2100,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,675,2101,'und',0,'2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,676,2506,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,677,2505,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,678,3076,'und',0,'2010 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,679,2498,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,680,2500,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,681,2502,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,682,2504,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,683,2660,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,684,9306,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,685,2865,'und',0,'2005 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,686,8588,'und',0,'2010 - 2012',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,687,2547,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,688,3313,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,689,3169,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,691,2013,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,692,9311,'und',0,'2006 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,693,2026,'und',0,'2009 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,694,3820,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,695,3822,'und',0,'2004 - 2009; 2011 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,696,2813,'und',0,'2004 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,697,2532,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,698,1994,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,699,2064,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,700,2010,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,701,1957,'und',0,'2006 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,702,1958,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,703,1964,'und',0,'2004 - 2009',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,704,1971,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,705,8708,'und',0,'2006 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,706,2012,'und',0,'2009 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,707,2065,'und',0,'2004 - 2009',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,708,2104,'und',0,'2007 - 2011',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,709,3072,'und',0,'2004 - 2009',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,710,2092,'und',0,'2004 - 2009',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,711,2095,'und',0,'2004 - 2010',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,729,3390,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,730,9318,'und',0,'2007 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2616,5214,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2617,5216,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2618,5217,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2619,5219,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2620,5224,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2621,5226,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2622,5140,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2623,5232,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2624,5235,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2625,5236,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2626,5237,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2627,6063,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2628,5347,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2629,5395,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2630,5454,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2631,5531,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2632,5238,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2633,5954,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2634,5220,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2635,5229,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2636,5240,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2637,5241,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2639,5348,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2640,7660,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2641,5349,'und',0,'2012 - present',NULL);
+INSERT INTO `field_data_field_active_dates` VALUES ('node','college_profile',0,2642,5239,'und',0,'2012 - present',NULL);
+/*!40000 ALTER TABLE `field_data_field_active_dates` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
