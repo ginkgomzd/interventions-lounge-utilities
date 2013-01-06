@@ -260,6 +260,9 @@ function get_multiselect_mapping () {
                 '#Institutional[^E]+Effectiveness#',
             ),
         ),
+
+
+
         'content_area'  => array(
             // hacks go first - some of the delimiting is done pretty poorly
             'Communications|Reading' => array(
@@ -385,8 +388,50 @@ function get_multiselect_mapping () {
                 '#study skills#',
             ),
         ),
-        'target_population' => array(),
-        'race' => array(),
+
+
+
+        'target_population' => array(
+        ),
+
+
+
+        'race' => array(
+            'BAANH' => array( // temporary label, replaced again later
+                '#Black/African American non-Hispanic#',
+                '#African American non-Hispanic#',
+            ),
+            'All Races' => array(
+                // no replacements, just explicitly stating an acceptable value
+            ),
+            'American Indian or Alaska Native' => array(
+                '#Alaskan Native#',
+                '#Native Hawaiian#',
+                '#•        Race: American Indian#',
+            ),
+            'Black or African American' => array(
+                '#African American and Hispanic#',
+                '#(?<!Black or )African American#',
+                '#Black & Latino Males#',
+                '#Black(?! or African American)#',
+            ),
+            // get rid of temporary placeholder
+            'Black or African American non-Hispanic' => array(
+                '#BAANH#',
+            ),
+            'Other' => array(
+                '#Asian#',
+                '#Other Pacific Islander#',
+            ),
+            '' => array(
+                // get rid of some non-printing characters
+                '#' . chr(194) . chr(160) . '#',
+                // categories to remove
+                '#(?<!non-)Hispanic#',
+                '#academically underprepared students#',
+                '#first( generation|-time students)#',
+            ),
+        ),
         'outcome_indicators' => array(),
     );
 }
