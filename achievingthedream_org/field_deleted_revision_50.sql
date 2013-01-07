@@ -34,16 +34,6 @@ CREATE TABLE `field_deleted_revision_50` (
 
 LOCK TABLES `field_deleted_revision_50` WRITE;
 /*!40000 ALTER TABLE `field_deleted_revision_50` DISABLE KEYS */;
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3811,8906,'und',0,68);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3812,8907,'und',0,65);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3813,8908,'und',0,76);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3814,8909,'und',0,77);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3815,8910,'und',0,63);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3816,8911,'und',0,77);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3817,8912,'und',0,65);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3818,8913,'und',0,78);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3819,8914,'und',0,77);
-INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3820,8915,'und',0,63);
 INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3821,8916,'und',0,77);
 INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3822,8917,'und',0,63);
 INSERT INTO `field_deleted_revision_50` VALUES ('node','mx_intervention',1,3823,8918,'und',0,63);
