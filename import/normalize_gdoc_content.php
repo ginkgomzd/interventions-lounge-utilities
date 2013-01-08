@@ -1,8 +1,9 @@
 #!/usr/bin/php -q
 <?php
 /**
- * This script gets all the values that ATD has been using in their multiselects
- * and presents them in order of most to least used.
+ * This script gets all the values that ATD has been using in its multiselects,
+ * matches them with normalized values, and updates the import table with the
+ * normalized values.
  *
  * @param string Name of config file
  * @return boolean 0 on success, 1 on failure
@@ -14,21 +15,19 @@ define('DB_TABL', 'gdoc');
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->connect_errno);
 
 // select all rows, we want intervention_type, content_area, target_population, race
-$sql = 'SELECT `intervention_type`, `content_area`, `target_population`,
+$sql = 'SELECT `intervention_id`, `intervention_type`, `content_area`, `target_population`,
     `race` FROM `' . DB_TABL . '` WHERE 1';
 
 if ($result = $DBCONN->query($sql)) {
-    $ms_values = array(
-        'intervention_type' => array(),
-        'content_area'  => array(),
-        'target_population' => array(),
-        'race' => array(),
-    );
+    $ms_values = array();
 
     $map = get_multiselect_mapping();
 
     // loop through them, split each value on comma, semicolon, pipe, and slash
     while ($row = $result->fetch_assoc()) {
+
+        $id = $row['intervention_id'];
+        unset($row['intervention_id']);
 
         foreach ($row as $field_name => $sloppy_data) {
             // check to see if we can already map these values
@@ -44,32 +43,29 @@ if ($result = $DBCONN->query($sql)) {
             foreach ($values as $v) {
                 $v = trim($v);
                 if ($v) { // this should weed out empty strings and such
-                    if (!array_key_exists($v, $ms_values[$field_name])) {
-                        $ms_values[$field_name][$v] = 1;
-                    } else {
-                        $ms_values[$field_name][$v]++;
-                    }
+                    $ms_values[$id][$field_name][] = $v;
                 }
             }
-
+            unset($values);
         }
     }
 
     $result->free();
 
-    // sort and print
-    foreach ($ms_values as $k => $arr) {
-        ksort($arr);
-        echo "================\n$k\n================\n";
-
-        foreach ($arr as $label => $cnt) {
-            echo "$label,$cnt\n";
+    foreach ($ms_values as $id => $data) {
+        $query = 'UPDATE `' . DB_TABL . '` SET ';
+        $set_clause = array();
+        foreach ($data as $field => $values) {
+            $set_clause[] = "`$field`" . ' = "' . implode('|', $values) . '"';
         }
+        $query .= implode(', ', $set_clause);
+        $query .= ' WHERE `intervention_id` = ' . $id;
 
-        echo "\n\n";
+        if ($result = $DBCONN->query($query)) {
+        } else {
+            error_out('Update query failed: ' . $DBCONN->error);
+        }
     }
-
-
 } else {
     error_out('Database could not be queried.');
 }

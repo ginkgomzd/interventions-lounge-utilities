@@ -20,6 +20,7 @@ ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/core_team_leaders.php ${MY_
 
 # clean up imported gdoc (multiselect) data
 ${MY_PATH}/normalize_gdoc.php ${MY_PATH}/conf/db.php
+${MY_PATH}/normalize_gdoc_content.php ${MY_PATH}/conf/db.php
 
 # clean up imported core_team_leaders data
 ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
