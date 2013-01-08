@@ -28,7 +28,7 @@ CREATE TABLE `block` (
   PRIMARY KEY (`bid`),
   UNIQUE KEY `tmd` (`theme`,`module`,`delta`),
   KEY `list` (`theme`,`status`,`region`,`weight`,`module`)
-) ENGINE=InnoDB AUTO_INCREMENT=409 DEFAULT CHARSET=utf8 COMMENT='Stores block settings, such as region and visibility...';
+) ENGINE=InnoDB AUTO_INCREMENT=413 DEFAULT CHARSET=utf8 COMMENT='Stores block settings, such as region and visibility...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `block` WRITE;
@@ -433,6 +433,10 @@ INSERT INTO `block` VALUES (405,'menu','features','ATD',0,0,'-1',0,0,'','',-1);
 INSERT INTO `block` VALUES (406,'menu','features','bartik',0,0,'-1',0,0,'','',-1);
 INSERT INTO `block` VALUES (407,'menu','features','seven',0,0,'-1',0,0,'','',-1);
 INSERT INTO `block` VALUES (408,'menu','features','zen',0,0,'-1',0,0,'','',-1);
+INSERT INTO `block` VALUES (409,'diff','inline','ATD',0,0,'-1',0,0,'','',1);
+INSERT INTO `block` VALUES (410,'diff','inline','bartik',0,0,'-1',0,0,'','',1);
+INSERT INTO `block` VALUES (411,'diff','inline','seven',0,0,'-1',0,0,'','',1);
+INSERT INTO `block` VALUES (412,'diff','inline','zen',0,0,'-1',0,0,'','',1);
 /*!40000 ALTER TABLE `block` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

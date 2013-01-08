@@ -43,7 +43,7 @@ CREATE TABLE `menu_links` (
   KEY `menu_plid_expand_child` (`menu_name`,`plid`,`expanded`,`has_children`),
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `router_path` (`router_path`(128))
-) ENGINE=InnoDB AUTO_INCREMENT=1116 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
+) ENGINE=InnoDB AUTO_INCREMENT=1158 DEFAULT CHARSET=utf8 COMMENT='Contains the individual links within a menu.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `menu_links` WRITE;
@@ -52,7 +52,7 @@ INSERT INTO `menu_links` VALUES ('management',1,0,'admin','admin','Administratio
 INSERT INTO `menu_links` VALUES ('user-menu',2,0,'user','user','User account','a:2:{s:5:\"alter\";b:1;s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',1,0,0,0,-10,1,1,2,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',3,0,'comment/%','comment/%','Comment permalink','a:0:{}','system',0,0,1,0,0,1,0,3,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',4,0,'filter/tips','filter/tips','Compose tips','a:0:{}','system',1,0,0,0,0,1,0,4,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('navigation',5,0,'node/%','node/%','','a:0:{}','system',0,0,0,0,0,1,0,5,0,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',5,0,'node/%','node/%','','a:0:{}','system',0,0,1,0,0,1,0,5,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',6,1,'node/add','node/add','Add content','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:0:\"\";}}','system',0,0,0,0,-49,2,1,1,6,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',7,1,'admin/appearance','admin/appearance','Appearance','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:33:\"Select and configure your themes.\";}}','system',0,0,0,0,-46,2,1,1,7,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',8,1,'admin/config','admin/config','Configuration','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:20:\"Administer settings.\";}}','system',0,0,1,0,-43,2,1,1,8,0,0,0,0,0,0,0,0);
@@ -517,8 +517,8 @@ INSERT INTO `menu_links` VALUES ('management',792,788,'admin/config/people/accou
 INSERT INTO `menu_links` VALUES ('management',793,138,'admin/structure/types/manage/%/display','admin/structure/types/manage/%/display','Manage display','a:0:{}','system',-1,0,0,0,2,5,0,1,21,36,138,793,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',794,138,'admin/structure/types/manage/%/fields','admin/structure/types/manage/%/fields','Manage fields','a:0:{}','system',-1,0,1,0,1,5,0,1,21,36,138,794,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',795,787,'admin/structure/taxonomy/%/display/full','admin/structure/taxonomy/%/display/full','Taxonomy term page','a:0:{}','system',-1,0,0,0,0,6,0,1,21,57,128,787,795,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',796,787,'admin/structure/taxonomy/%/display/token','admin/structure/taxonomy/%/display/token','Tokens','a:0:{}','system',-1,0,0,0,1,6,0,1,21,57,128,787,796,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',797,788,'admin/config/people/accounts/display/token','admin/config/people/accounts/display/token','Tokens','a:0:{}','system',-1,0,0,0,1,6,0,1,8,48,89,788,797,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',796,787,'admin/structure/taxonomy/%/display/token','admin/structure/taxonomy/%/display/token','Tokens','a:0:{}','system',-1,0,0,0,2,6,0,1,21,57,128,787,796,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',797,788,'admin/config/people/accounts/display/token','admin/config/people/accounts/display/token','Tokens','a:0:{}','system',-1,0,0,0,2,6,0,1,8,48,89,788,797,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',798,788,'admin/config/people/accounts/display/full','admin/config/people/accounts/display/full','User account','a:0:{}','system',-1,0,0,0,0,6,0,1,8,48,89,788,798,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',799,789,'admin/structure/taxonomy/%/fields/%','admin/structure/taxonomy/%/fields/%','','a:0:{}','system',0,0,0,0,0,6,0,1,21,57,128,789,799,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',800,790,'admin/config/people/accounts/fields/%','admin/config/people/accounts/fields/%','','a:0:{}','system',0,0,0,0,0,6,0,1,8,48,89,790,800,0,0,0,0);
@@ -528,7 +528,7 @@ INSERT INTO `menu_links` VALUES ('management',803,793,'admin/structure/types/man
 INSERT INTO `menu_links` VALUES ('management',804,793,'admin/structure/types/manage/%/display/search_index','admin/structure/types/manage/%/display/search_index','Search index','a:0:{}','system',-1,0,0,0,3,6,0,1,21,36,138,793,804,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',805,793,'admin/structure/types/manage/%/display/search_result','admin/structure/types/manage/%/display/search_result','Search result','a:0:{}','system',-1,0,0,0,4,6,0,1,21,36,138,793,805,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',806,793,'admin/structure/types/manage/%/display/teaser','admin/structure/types/manage/%/display/teaser','Teaser','a:0:{}','system',-1,0,0,0,1,6,0,1,21,36,138,793,806,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',807,793,'admin/structure/types/manage/%/display/token','admin/structure/types/manage/%/display/token','Tokens','a:0:{}','system',-1,0,0,0,5,6,0,1,21,36,138,793,807,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',807,793,'admin/structure/types/manage/%/display/token','admin/structure/types/manage/%/display/token','Tokens','a:0:{}','system',-1,0,0,0,6,6,0,1,21,36,138,793,807,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',808,794,'admin/structure/types/manage/%/fields/%','admin/structure/types/manage/%/fields/%','','a:0:{}','system',0,0,0,0,0,6,0,1,21,36,138,794,808,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',809,799,'admin/structure/taxonomy/%/fields/%/delete','admin/structure/taxonomy/%/fields/%/delete','Delete','a:0:{}','system',-1,0,0,0,10,7,0,1,21,57,128,789,799,809,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',810,799,'admin/structure/taxonomy/%/fields/%/edit','admin/structure/taxonomy/%/fields/%/edit','Edit','a:0:{}','system',-1,0,0,0,0,7,0,1,21,57,128,789,799,810,0,0,0);
@@ -540,7 +540,7 @@ INSERT INTO `menu_links` VALUES ('management',815,800,'admin/config/people/accou
 INSERT INTO `menu_links` VALUES ('management',816,800,'admin/config/people/accounts/fields/%/widget-type','admin/config/people/accounts/fields/%/widget-type','Widget type','a:0:{}','system',-1,0,0,0,0,7,0,1,8,48,89,790,800,816,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',817,182,'admin/structure/types/manage/%/comment/display/default','admin/structure/types/manage/%/comment/display/default','Default','a:0:{}','system',-1,0,0,0,-10,6,0,1,21,36,138,182,817,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',818,182,'admin/structure/types/manage/%/comment/display/full','admin/structure/types/manage/%/comment/display/full','Full comment','a:0:{}','system',-1,0,0,0,0,6,0,1,21,36,138,182,818,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',819,182,'admin/structure/types/manage/%/comment/display/token','admin/structure/types/manage/%/comment/display/token','Tokens','a:0:{}','system',-1,0,0,0,1,6,0,1,21,36,138,182,819,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',819,182,'admin/structure/types/manage/%/comment/display/token','admin/structure/types/manage/%/comment/display/token','Tokens','a:0:{}','system',-1,0,0,0,2,6,0,1,21,36,138,182,819,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',820,183,'admin/structure/types/manage/%/comment/fields/%','admin/structure/types/manage/%/comment/fields/%','','a:0:{}','system',0,0,0,0,0,6,0,1,21,36,138,183,820,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',821,808,'admin/structure/types/manage/%/fields/%/delete','admin/structure/types/manage/%/fields/%/delete','Delete','a:0:{}','system',-1,0,0,0,10,7,0,1,21,36,138,794,808,821,0,0,0);
 INSERT INTO `menu_links` VALUES ('management',822,808,'admin/structure/types/manage/%/fields/%/edit','admin/structure/types/manage/%/fields/%/edit','Edit','a:0:{}','system',-1,0,0,0,0,7,0,1,21,36,138,794,808,822,0,0,0);
@@ -700,12 +700,48 @@ INSERT INTO `menu_links` VALUES ('menu-dream-2013',1100,1098,'node/4079','node/%
 INSERT INTO `menu_links` VALUES ('menu-dream-2013',1101,1098,'node/4081','node/%','Plenaries and Spotlight Sessions','a:0:{}','menu',0,0,0,0,0,2,0,1098,1101,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('menu-dream-2013',1102,0,'node/4082','node/%','Birds of a Feather','a:0:{}','menu',0,0,0,0,-47,1,1,1102,0,0,0,0,0,0,0,0,0);
 INSERT INTO `menu_links` VALUES ('navigation',1109,0,'node/add/mx-intervention','node/add/mx-intervention','MX Intervention','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:51:\"usually these will be imported via the Feeds module\";}}','system',0,0,0,0,0,1,0,1109,0,0,0,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1110,525,'admin/structure/panels/layouts','admin/structure/panels/layouts','Layouts','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:43:\"Add, edit or delete custom content layouts.\";}}','system',-1,0,0,0,0,4,0,1,21,525,1110,0,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1111,1110,'admin/structure/panels/layouts/add-flexible','admin/structure/panels/layouts/add-flexible','Add flexible layout','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1110,1111,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1112,1110,'admin/structure/panels/layouts/import','admin/structure/panels/layouts/import','Import','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1110,1112,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1113,1110,'admin/structure/panels/layouts/list','admin/structure/panels/layouts/list','List','a:0:{}','system',-1,0,0,0,-10,5,0,1,21,525,1110,1113,0,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1114,1113,'admin/structure/panels/layouts/list/%/edit','admin/structure/panels/layouts/list/%/edit','Edit','a:0:{}','system',-1,0,0,0,-10,6,0,1,21,525,1110,1113,1114,0,0,0,0);
-INSERT INTO `menu_links` VALUES ('management',1115,1113,'admin/structure/panels/layouts/list/%/export','admin/structure/panels/layouts/list/%/export','Export','a:0:{}','system',-1,0,0,0,0,6,0,1,21,525,1110,1113,1115,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1116,5,'node/%/current-revision','node/%/current-revision','','a:0:{}','system',0,0,0,0,0,2,0,5,1116,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1117,21,'admin/structure/features','admin/structure/features','Features','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:16:\"Manage features.\";}}','system',0,0,0,0,0,3,0,1,21,1117,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1118,5,'node/%/moderation','node/%/moderation','Moderate','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:36:\"Show the content moderation history.\";}}','system',-1,0,0,0,0,2,0,5,1118,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1119,5,'node/%/draft','node/%/draft','View draft','a:0:{}','system',-1,0,0,0,-9,2,0,5,1119,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1120,8,'admin/config/workbench','admin/config/workbench','Workbench','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:9:\"Workbench\";}}','system',0,0,1,0,0,3,0,1,8,1120,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1121,12,'admin/help/diff','admin/help/diff','diff','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1121,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1122,12,'admin/help/features','admin/help/features','features','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1122,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1123,12,'admin/help/workbench_moderation','admin/help/workbench_moderation','workbench_moderation','a:0:{}','system',-1,0,0,0,0,3,0,1,12,1123,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1124,1,'admin/workbench/drafts','admin/workbench/drafts','My Drafts','a:0:{}','system',-1,0,0,0,98,2,0,1,1124,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1125,1,'admin/workbench/needs-review','admin/workbench/needs-review','Needs Review','a:0:{}','system',-1,0,0,0,99,2,0,1,1125,0,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1126,52,'node/%/revisions/view','node/%/revisions/view','Compare revisions','a:0:{}','system',-1,0,0,0,0,3,0,5,52,1126,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1127,1117,'admin/structure/features/create','admin/structure/features/create','Create feature','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:21:\"Create a new feature.\";}}','system',-1,0,0,0,10,4,0,1,21,1117,1127,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1128,35,'admin/config/content/diff','admin/config/content/diff','Diff','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:14:\"Diff settings.\";}}','system',0,0,0,0,0,4,0,1,8,35,1128,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1129,1118,'node/%/moderation/diff','node/%/moderation/diff','Diff','a:0:{}','system',-1,0,0,0,0,3,0,5,1118,1129,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1130,52,'node/%/revisions/list','node/%/revisions/list','List revisions','a:0:{}','system',-1,0,0,0,0,3,0,5,52,1130,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1131,1117,'admin/structure/features/manage','admin/structure/features/manage','Manage','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:28:\"Enable and disable features.\";}}','system',-1,0,0,0,0,4,0,1,21,1117,1131,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1132,1118,'node/%/moderation/view','node/%/moderation/view','Revisions','a:0:{}','system',-1,0,0,0,-1,3,0,5,1118,1132,0,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1133,1120,'admin/config/workbench/moderation','admin/config/workbench/moderation','Workbench Moderation','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:29:\"Configure content moderation.\";}}','system',0,0,0,0,0,4,0,1,8,1120,1133,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1134,1133,'admin/config/workbench/moderation/check-permissions','admin/config/workbench/moderation/check-permissions','Check Permissions','a:0:{}','system',-1,0,0,0,10,5,0,1,8,1120,1133,1134,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1135,1129,'node/%/moderation/diff/view','node/%/moderation/diff/view','Compare revisions','a:0:{}','system',-1,0,0,0,0,4,0,5,1118,1129,1135,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1136,1129,'node/%/moderation/diff/list','node/%/moderation/diff/list','Diff','a:0:{}','system',-1,0,0,0,-1,4,0,5,1118,1129,1136,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1137,1128,'admin/config/content/diff/entities','admin/config/content/diff/entities','Entities','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:16:\"Entity settings.\";}}','system',-1,0,0,0,0,5,0,1,8,35,1128,1137,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1138,1128,'admin/config/content/diff/fields','admin/config/content/diff/fields','Fields','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:36:\"Field support and settings overview.\";}}','system',-1,0,0,0,0,5,0,1,8,35,1128,1138,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1139,1128,'admin/config/content/diff/settings','admin/config/content/diff/settings','Settings','a:0:{}','system',-1,0,0,0,-10,5,0,1,8,35,1128,1139,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('navigation',1140,1126,'node/%/revisions/view/latest','node/%/revisions/view/latest','Show latest difference','a:0:{}','system',-1,0,0,0,0,4,0,5,52,1126,1140,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1141,1133,'admin/config/workbench/moderation/general','admin/config/workbench/moderation/general','States','a:0:{}','system',-1,0,0,0,-1,5,0,1,8,1120,1133,1141,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1142,1133,'admin/config/workbench/moderation/transitions','admin/config/workbench/moderation/transitions','Transitions','a:0:{}','system',-1,0,0,0,0,5,0,1,8,1120,1133,1142,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1143,1117,'admin/structure/features/%/view','admin/structure/features/%/view','View','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:32:\"Display components of a feature.\";}}','system',-1,0,0,0,-10,4,0,1,21,1117,1143,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1144,1117,'admin/structure/features/%/recreate','admin/structure/features/%/recreate','Recreate','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:29:\"Recreate an existing feature.\";}}','system',-1,0,0,0,11,4,0,1,21,1117,1144,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1145,1117,'admin/structure/features/%/diff','admin/structure/features/%/diff','Review overrides','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:36:\"Compare default and current feature.\";}}','system',-1,0,0,0,0,4,0,1,21,1117,1145,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1146,1138,'admin/config/content/diff/fields/%','admin/config/content/diff/fields/%','Global field settings','a:0:{}','system',-1,0,0,0,0,6,0,1,8,35,1128,1138,1146,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1147,1137,'admin/config/content/diff/entities/node','admin/config/content/diff/entities/node','Node','a:0:{}','system',-1,0,0,0,-10,6,0,1,8,35,1128,1137,1147,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1148,787,'admin/structure/taxonomy/%/display/diff_standard','admin/structure/taxonomy/%/display/diff_standard','Revision comparison','a:0:{}','system',-1,0,0,0,1,6,0,1,21,57,128,787,1148,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1149,788,'admin/config/people/accounts/display/diff_standard','admin/config/people/accounts/display/diff_standard','Revision comparison','a:0:{}','system',-1,0,0,0,1,6,0,1,8,48,89,788,1149,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1150,793,'admin/structure/types/manage/%/display/diff_standard','admin/structure/types/manage/%/display/diff_standard','Revision comparison','a:0:{}','system',-1,0,0,0,5,6,0,1,21,36,138,793,1150,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1151,182,'admin/structure/types/manage/%/comment/display/diff_standard','admin/structure/types/manage/%/comment/display/diff_standard','Revision comparison','a:0:{}','system',-1,0,0,0,1,6,0,1,21,36,138,182,1151,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1152,525,'admin/structure/panels/layouts','admin/structure/panels/layouts','Layouts','a:1:{s:10:\"attributes\";a:1:{s:5:\"title\";s:43:\"Add, edit or delete custom content layouts.\";}}','system',-1,0,0,0,0,4,0,1,21,525,1152,0,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1153,1152,'admin/structure/panels/layouts/add-flexible','admin/structure/panels/layouts/add-flexible','Add flexible layout','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1152,1153,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1154,1152,'admin/structure/panels/layouts/import','admin/structure/panels/layouts/import','Import','a:0:{}','system',-1,0,0,0,0,5,0,1,21,525,1152,1154,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1155,1152,'admin/structure/panels/layouts/list','admin/structure/panels/layouts/list','List','a:0:{}','system',-1,0,0,0,-10,5,0,1,21,525,1152,1155,0,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1156,1155,'admin/structure/panels/layouts/list/%/edit','admin/structure/panels/layouts/list/%/edit','Edit','a:0:{}','system',-1,0,0,0,-10,6,0,1,21,525,1152,1155,1156,0,0,0,0);
+INSERT INTO `menu_links` VALUES ('management',1157,1155,'admin/structure/panels/layouts/list/%/export','admin/structure/panels/layouts/list/%/export','Export','a:0:{}','system',-1,0,0,0,0,6,0,1,21,525,1152,1155,1157,0,0,0,0);
 /*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

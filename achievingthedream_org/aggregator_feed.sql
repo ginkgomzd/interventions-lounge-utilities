@@ -35,7 +35,7 @@ CREATE TABLE `aggregator_feed` (
 
 LOCK TABLES `aggregator_feed` WRITE;
 /*!40000 ALTER TABLE `aggregator_feed` DISABLE KEYS */;
-INSERT INTO `aggregator_feed` VALUES (1,'Flickr DREAM 2012 Wednesday','http://pipes.yahoo.com/pipes/pipe.run?_id=HHvHTP7h2xGPZ1tDdbq02Q&_render=rss&urlinput2=http%3A%2F%2Fapi.flickr.com%2Fservices%2Ffeeds%2Fphotoset.gne%3Fset%3D72157629542480817%26nsid%3D77814274%40N08%26lang%3Den-us',900,1357583995,0,'http://pipes.yahoo.com/pipes/pipe.info?_id=HHvHTP7h2xGPZ1tDdbq02Q','Get larger images in your Flickr feeds.   \nCreated by Tom Lee of http://www.echoditto.com and http://www.manifestdensity.net','','395eac77d49a3a7cf7aceb58c80a812bcaeb41857f6c95bc6826b0f18d889ca8','',0,0);
+INSERT INTO `aggregator_feed` VALUES (1,'Flickr DREAM 2012 Wednesday','http://pipes.yahoo.com/pipes/pipe.run?_id=HHvHTP7h2xGPZ1tDdbq02Q&_render=rss&urlinput2=http%3A%2F%2Fapi.flickr.com%2Fservices%2Ffeeds%2Fphotoset.gne%3Fset%3D72157629542480817%26nsid%3D77814274%40N08%26lang%3Den-us',900,1357680653,0,'http://pipes.yahoo.com/pipes/pipe.info?_id=HHvHTP7h2xGPZ1tDdbq02Q','Get larger images in your Flickr feeds.   \nCreated by Tom Lee of http://www.echoditto.com and http://www.manifestdensity.net','','1525abe89005c17c737202d84ffa08df226cf9a9b31177b54691d5e41be4e901','',0,0);
 /*!40000 ALTER TABLE `aggregator_feed` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
