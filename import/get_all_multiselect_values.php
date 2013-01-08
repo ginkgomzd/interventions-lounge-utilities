@@ -13,9 +13,9 @@ define('DB_TABL', 'gdoc');
 
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->connect_errno);
 
-// select all rows, we want intervention_type, content_area, target_population, race, outcome_indicators
+// select all rows, we want intervention_type, content_area, target_population, race
 $sql = 'SELECT `intervention_type`, `content_area`, `target_population`,
-    `race`, `outcome_indicators` FROM `' . DB_TABL . '` WHERE 1';
+    `race` FROM `' . DB_TABL . '` WHERE 1';
 
 if ($result = $DBCONN->query($sql)) {
     $ms_values = array(
@@ -23,7 +23,6 @@ if ($result = $DBCONN->query($sql)) {
         'content_area'  => array(),
         'target_population' => array(),
         'race' => array(),
-        'outcome_indicators' => array(),
     );
 
     $map = get_multiselect_mapping();
@@ -572,7 +571,6 @@ function get_multiselect_mapping () {
                 '#first( generation|-time students)#',
             ),
         ),
-        'outcome_indicators' => array(),
     );
 }
 ?>
