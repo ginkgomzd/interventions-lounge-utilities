@@ -82,23 +82,19 @@ if (!($result = $DBCONN->query($sql))) {
             error_out($DBCONN->error);
         }
 
-        // insert body
-        $sql = "
-            INSERT INTO {$db_name_drupal}.`field_data_body`
-            SET `entity_type` = 'node',
-                `bundle` = 'intervention',
-                `entity_id` = {$node_id},
-                `revision_id` = {$revision_id},
-                `language` = 'und',
-                `delta` = 0,
-                `body_value` = {$row['description']},
-                `body_format` = 'filtered_html'
-        ";
-        if (!$DBCONN->query($sql)) {
-            error_out($DBCONN->error);
-        }
+        $insert = array(
+            'entity_type' => 'node',
+            'bundle' => 'intervention',
+            'entity_id' => $node_id,
+            'revision_id' => $revision_id,
+            'body_value' => $row['description'],
+            'body_format' => 'filtered_html',
+        );
+        insert_drupal_cck_field('body', $insert);
 
-        // TODO: insert body revision
+        unset($insert['body_value'], $insert['body_format']);
+        $insert['field_reporting_year_value'] = $row['reporting_year'];
+        insert_drupal_cck_field('reporting_year', $insert);
     }
 
     // restore dropped node key
@@ -109,7 +105,6 @@ if (!($result = $DBCONN->query($sql))) {
 
 
 }
-
 
 
 

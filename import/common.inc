@@ -27,4 +27,31 @@ function error_out($msg) {
     die(1);
 }
 
+/**
+ * This function is used to insert content into CCK fields.
+ *
+ * @global object $DBCONN Global database connection
+ * @param string $field_name The name of the CCK field, sans field_ prefix.
+ * @param array $pairs Keyed by database field names, values to be inserted.
+ * @return void
+ */
+function insert_drupal_cck_field($field_name, array $pairs) {
+    global $DBCONN;
+
+    $set_clause = array();
+    foreach ($pairs as $k => $v) {
+        $set_clause[] = "`{$k}` = '" . $DBCONN->real_escape_string($v) . "'";
+    }
+
+    foreach (array('data', 'revision') as $type) {
+        $sql = "
+            INSERT INTO {$db_name_drupal}.`field_{$type}_{$field_name}`
+            SET `language` = 'und',
+                `delta` = 0," . implode(', ', $set_clause);
+
+        if (!$DBCONN->query($sql)) {
+            error_out($DBCONN->error);
+        }
+    }
+}
 ?>
