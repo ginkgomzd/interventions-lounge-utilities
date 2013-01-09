@@ -28,17 +28,11 @@ ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 # get into drush-friendly environment
 cd ${SITE_PATH}
 
-# update salesforce suite and install features
-drush -y up salesforce
-drush pml 2> /dev/null | grep features &> /dev/null
-if [ $? != 0 ]
-then
-    drush dl features &> /dev/null
-fi
-drush -y en features
-
 # enable meta module
 drush -y en interventions_lounge
+
+# download the js library for the intervention-contact phone field
+drush -y masked_input-library
 
 # return to current path
 cd ${CUR_PATH}
