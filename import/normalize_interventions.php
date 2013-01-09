@@ -15,6 +15,17 @@ $q = array();
 
 $q[] = "
 UPDATE " . DB_TABL . "
+SET `reporting_year` = NULL
+WHERE `reporting_year` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `reporting_year` = CONCAT(LEFT(`reporting_year`,4), '-01-01 00:00:00')
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
 SET `start_date` = NULL
 WHERE `start_date` = ''
 ";
