@@ -36,7 +36,11 @@ function error_out($msg) {
  * @return void
  */
 function insert_drupal_cck_field($field_name, array $pairs) {
-    global $DBCONN;
+    global $DBCONN, $db_name_drupal;
+
+    if ($field_name !== 'body') {
+        $field_name = 'field_' . $field_name;
+    }
 
     $set_clause = array();
     foreach ($pairs as $k => $v) {
@@ -45,7 +49,7 @@ function insert_drupal_cck_field($field_name, array $pairs) {
 
     foreach (array('data', 'revision') as $type) {
         $sql = "
-            INSERT INTO {$db_name_drupal}.`field_{$type}_{$field_name}`
+            INSERT INTO `{$db_name_drupal}`.`field_{$type}_{$field_name}`
             SET `language` = 'und',
                 `delta` = 0," . implode(', ', $set_clause);
 

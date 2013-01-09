@@ -15,6 +15,73 @@ $q = array();
 
 $q[] = "
 UPDATE " . DB_TABL . "
+SET `ethnicity` = NULL
+WHERE `ethnicity` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `ethnicity` = 'All'
+WHERE `ethnicity` = 'All Ethnicities'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `ethnicity` = 'Latino'
+WHERE `ethnicity` = 'Hispanic or Latino'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `ethnicity` = 'NonLatino'
+WHERE `ethnicity` = 'Not Hispanic or Latino'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `gender` = NULL
+WHERE `gender` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `gender` = 'Males'
+WHERE `gender` = 'Males only'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `gender` = 'Females'
+WHERE `gender` = 'Females only'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `gender` = 'n/a'
+WHERE `gender` = 'Males and Females'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `intervention_status` = NULL
+WHERE `intervention_status` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `promising` = NULL
+WHERE `promising` IN ('', 'Need more info')
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `proportion_served` = 'NA'
+WHERE `proportion_served` IN ('', 'Not Available')
+";
+
+
+$q[] = "
+UPDATE " . DB_TABL . "
 SET `reporting_year` = NULL
 WHERE `reporting_year` = ''
 ";
