@@ -36,9 +36,9 @@ if (!($result = $DBCONN->query($sql))) {
 } else {
     // Drupal requires vid, and we don't have this yet, so disable key for now
     $sql = "ALTER TABLE `{$db_name_drupal}`.`node` DROP KEY `vid`";
-//    if (!$DBCONN->query($sql)) {
-//        error_out('Node key drop failed: ' . $DBCONN->error);
-//    }
+    if (!$DBCONN->query($sql)) {
+        error_out('Node key drop failed: ' . $DBCONN->error);
+    }
 
     // set up value mapping
     $map_intervention_type = array(
@@ -134,7 +134,7 @@ if (!($result = $DBCONN->query($sql))) {
                 `created` = {$now}
         ";
         if (!$DBCONN->query($sql)) {
-            error_out($DBCONN->error);
+            error_out($DBCONN->error . ". Query: " . $sql);
         }
         $node_id = $DBCONN->insert_id;
 
@@ -148,7 +148,7 @@ if (!($result = $DBCONN->query($sql))) {
             `timestamp` = {$now}
         ";
         if (!$DBCONN->query($sql)) {
-            error_out($DBCONN->error);
+            error_out($DBCONN->error . ". Query: " . $sql);
         }
         $revision_id = $DBCONN->insert_id;
 
@@ -159,7 +159,7 @@ if (!($result = $DBCONN->query($sql))) {
             WHERE `nid` = {$node_id}
         ";
         if (!$DBCONN->query($sql)) {
-            error_out($DBCONN->error);
+            error_out($DBCONN->error . ". Query: " . $sql);
         }
 
         // now we get to the business of inserting data into CCK fields
@@ -182,21 +182,21 @@ if (!($result = $DBCONN->query($sql))) {
         insert_drupal_cck_field('college_reference', $insert);
 
         unset($insert['field_college_reference_nid']);
-        $intervention_types = explode('|', $row['intervention_type']);
+        $intervention_types = array_unique(explode('|', $row['intervention_type']));
         foreach ($intervention_types as $t) {
             $insert['field_intervention_type_value'] = @$map_intervention_type[$t];
             insert_drupal_cck_field('intervention_type', $insert);
         }
 
         unset($insert['field_intervention_type_value']);
-        $content_areas = explode('|', $row['content_area']);
+        $content_areas = array_unique(explode('|', $row['content_area']));
         foreach ($content_areas as $c) {
             $insert['field_content_area_value'] = @$map_content_area[$c];
             insert_drupal_cck_field('content_area', $insert);
         }
 
         unset($insert['field_content_area_value']);
-        $tp = explode('|', $row['target_population']);
+        $tp = array_unique(explode('|', $row['target_population']));
         foreach ($tp as $t) {
             $insert['field_target_population_value'] = @$map_target_pop[$t];
             insert_drupal_cck_field('target_population', $insert);
@@ -211,7 +211,7 @@ if (!($result = $DBCONN->query($sql))) {
         insert_drupal_cck_field('target_ethnicity', $insert);
 
         unset($insert['field_target_ethnicity_value']);
-        $race = explode('|', $row['race']);
+        $race = array_unique(explode('|', $row['race']));
         foreach ($race as $r) {
             $insert['field_target_race_value'] = @$map_race[$r];
             insert_drupal_cck_field('target_race', $insert);

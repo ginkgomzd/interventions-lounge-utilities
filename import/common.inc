@@ -54,7 +54,7 @@ function insert_drupal_cck_field($field_name, array $pairs) {
                 `delta` = 0," . implode(', ', $set_clause);
 
         if (!$DBCONN->query($sql)) {
-            error_out($DBCONN->error);
+            error_out($DBCONN->error . ". Query: " . $sql);
         }
     }
 }
