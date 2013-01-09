@@ -21,6 +21,8 @@ require_once($config);
  * @return void
  */
 function error_out($msg) {
+    global $argv;
+    $msg = $argv[0] . ': ' . $msg;
     file_put_contents('php://stderr', $msg . "\n");
     die(1);
 }
