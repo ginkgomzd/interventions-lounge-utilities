@@ -46,7 +46,7 @@ cd ${CUR_PATH}
 ${MY_PATH}/import_update_institutions.php ${MY_PATH}/conf/db.php
 
 # import interventions
-
+${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php
 
 # TODO: write script which imports an Intervention and checks the corresponding
 # institution_id in the core_team_leaders table. We use the data in core_team_leaders
