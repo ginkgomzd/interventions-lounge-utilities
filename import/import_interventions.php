@@ -131,7 +131,8 @@ if (!($result = $DBCONN->query($sql))) {
                 `title` = '{$row['intervention_name']}',
                 `language` = 'und',
                 `uid` = {$user_id},
-                `created` = {$now}
+                `created` = {$now},
+                `changed` = {$now}
         ";
         if (!$DBCONN->query($sql)) {
             error_out($DBCONN->error . ". Query: " . $sql);
@@ -164,6 +165,7 @@ if (!($result = $DBCONN->query($sql))) {
 
         // now we get to the business of inserting data into CCK fields
         $insert = array(
+            'delta' => 0,
             'entity_type' => 'node',
             'bundle' => 'intervention',
             'entity_id' => $node_id,
@@ -186,21 +188,28 @@ if (!($result = $DBCONN->query($sql))) {
         foreach ($intervention_types as $t) {
             $insert['field_intervention_type_value'] = @$map_intervention_type[$t];
             insert_drupal_cck_field('intervention_type', $insert);
+            $insert['delta']++;
         }
+        $insert['delta'] = 0;
 
         unset($insert['field_intervention_type_value']);
         $content_areas = array_unique(explode('|', $row['content_area']));
         foreach ($content_areas as $c) {
             $insert['field_content_area_value'] = @$map_content_area[$c];
             insert_drupal_cck_field('content_area', $insert);
+            $insert['delta']++;
         }
+        $insert['delta'] = 0;
+
 
         unset($insert['field_content_area_value']);
         $tp = array_unique(explode('|', $row['target_population']));
         foreach ($tp as $t) {
             $insert['field_target_population_value'] = @$map_target_pop[$t];
             insert_drupal_cck_field('target_population', $insert);
+            $insert['delta']++;
         }
+        $insert['delta'] = 0;
 
         unset($insert['field_target_population_value']);
         $insert['field_target_gender_value'] = $row['gender'];
@@ -215,7 +224,9 @@ if (!($result = $DBCONN->query($sql))) {
         foreach ($race as $r) {
             $insert['field_target_race_value'] = @$map_race[$r];
             insert_drupal_cck_field('target_race', $insert);
+            $insert['delta']++;
         }
+        $insert['delta'] = 0;
 
         unset($insert['field_target_race_value']);
         $insert['field_start_year_value'] = $row['start_date'];

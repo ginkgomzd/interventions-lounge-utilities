@@ -50,8 +50,8 @@ function insert_drupal_cck_field($field_name, array $pairs) {
     foreach (array('data', 'revision') as $type) {
         $sql = "
             INSERT INTO `{$db_name_drupal}`.`field_{$type}_{$field_name}`
-            SET `language` = 'und',
-                `delta` = 0," . implode(', ', $set_clause);
+            SET `language` = 'und'," .
+                implode(', ', $set_clause);
 
         if (!$DBCONN->query($sql)) {
             error_out($DBCONN->error . ". Query: " . $sql);
