@@ -54,9 +54,5 @@ ${MY_PATH}/import_update_institutions.php ${MY_PATH}/conf/db.php
 # import interventions
 ${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php
 
-# TODO: write script which imports an Intervention and checks the corresponding
-# institution_id in the core_team_leaders table. We use the data in core_team_leaders
-# to find or create a Drupal user and the data in Institution table to create
-# an Intervention Contact record. The IC is added as a node-reference to the
-# Intervention record, and both records are owned by the found/created Drupal
-# user. This is over-simplified; we'll have some fun joins to play with.
+# import interventions
+${MY_PATH}/import_intervention_contacts.php ${MY_PATH}/conf/db.php
