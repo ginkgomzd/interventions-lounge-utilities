@@ -27,6 +27,9 @@ ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 # get into drush-friendly environment
 cd ${SITE_PATH}
 
+# stupid marker error will break the update, so we disable
+drush -y dis gmap_location gmap_taxonomy gmap
+
 # update salesforce suite and install features
 drush -y up salesforce
 drush pml 2> /dev/null | grep features &> /dev/null
@@ -38,6 +41,9 @@ drush -y en features
 
 # enable meta module
 drush -y en interventions_lounge
+
+# turn gmap_location back on
+drush -y en gmap_location gmap_taxonomy gmap
 
 # return to current path
 cd ${CUR_PATH}
