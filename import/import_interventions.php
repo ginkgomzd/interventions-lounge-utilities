@@ -268,13 +268,6 @@ if (!($result = $DBCONN->query($sql))) {
 
 }
 
-/*
- * stub
- */
-function get_user_id($email) {
-    return '1';
-}
-
 mysqli_close($DBCONN);
 die(0);
 ?>

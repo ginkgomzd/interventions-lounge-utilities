@@ -58,4 +58,11 @@ function insert_drupal_cck_field($field_name, array $pairs) {
         }
     }
 }
+
+/*
+ * stub
+ */
+function get_user_id($email) {
+    return '1';
+}
 ?>
