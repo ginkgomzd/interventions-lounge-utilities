@@ -40,7 +40,7 @@ WHERE `ethnicity` = 'Not Hispanic or Latino'
 $q[] = "
 UPDATE " . DB_TABL . "
 SET `gender` = NULL
-WHERE `gender` = ''
+WHERE `gender` IN ('', 'n/a', 'Males and Females')
 ";
 
 $q[] = "
@@ -53,12 +53,6 @@ $q[] = "
 UPDATE " . DB_TABL . "
 SET `gender` = 'Females'
 WHERE `gender` = 'Females only'
-";
-
-$q[] = "
-UPDATE " . DB_TABL . "
-SET `gender` = 'n/a'
-WHERE `gender` = 'Males and Females'
 ";
 
 $q[] = "

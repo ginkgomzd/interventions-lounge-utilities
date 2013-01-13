@@ -224,12 +224,14 @@ if (!($result = $DBCONN->query($sql))) {
             $insert['delta']++;
         }
         $insert['delta'] = 0;
-
         unset($insert['field_target_population_value']);
-        $insert['field_target_gender_value'] = $row['gender'];
-        insert_drupal_cck_field('target_gender', $insert);
 
-        unset($insert['field_target_gender_value']);
+        if ($row['gender']) {
+            $insert['field_target_gender_value'] = $row['gender'];
+            insert_drupal_cck_field('target_gender', $insert);
+            unset($insert['field_target_gender_value']);
+        }
+
         $insert['field_target_ethnicity_value'] = $row['ethnicity'];
         insert_drupal_cck_field('target_ethnicity', $insert);
 
