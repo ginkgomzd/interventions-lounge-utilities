@@ -31,7 +31,8 @@ cd ${SITE_PATH}
 drush -y dis gmap_location gmap_taxonomy gmap
 
 # update salesforce suite and install features
-drush -y up salesforce
+drush -y dl salesforce-7.x-2.0-alpha3
+drush -y updb
 drush pml 2> /dev/null | grep features &> /dev/null
 if [ $? != 0 ]
 then
@@ -54,5 +55,5 @@ ${MY_PATH}/import_update_institutions.php ${MY_PATH}/conf/db.php
 # import interventions
 ${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php
 
-# import interventions
+# import interventions contacts
 ${MY_PATH}/import_intervention_contacts.php ${MY_PATH}/conf/db.php
