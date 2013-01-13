@@ -27,6 +27,10 @@ ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 # get into drush-friendly environment
 cd ${SITE_PATH}
 
+# for safety, put the site into maintenance mode before touching the DB
+drush vset --exact -y maintenance_mode 1
+drush cc all # apparently variables are cached; this should take care of that
+
 # stupid marker error will break the update, so we disable
 drush -y dis gmap_location gmap_taxonomy gmap
 
@@ -57,3 +61,9 @@ ${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php
 
 # import interventions contacts
 ${MY_PATH}/import_intervention_contacts.php ${MY_PATH}/conf/db.php
+
+# take Drupal out of maintenance mode
+cd ${SITE_PATH}
+drush vset --exact -y maintenance_mode 0
+drush cc all
+cd ${CUR_PATH}
