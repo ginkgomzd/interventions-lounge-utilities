@@ -127,6 +127,7 @@ if (!($result = $DBCONN->query($sql))) {
                 `title` = '{$row['intervention_name']}',
                 `language` = 'und',
                 `uid` = {$user_id},
+                `status` = 0,
                 `created` = {$now},
                 `changed` = {$now}
         ";
@@ -142,7 +143,8 @@ if (!($result = $DBCONN->query($sql))) {
             `title` = '{$row['intervention_name']}',
             `log` = 'Grand Junction Design Content Migration',
             `uid` = {$user_id},
-            `timestamp` = {$now}
+            `timestamp` = {$now},
+            `status` = 0
         ";
         if (!$DBCONN->query($sql)) {
             error_out($DBCONN->error . ". Query: " . $sql);
@@ -154,6 +156,22 @@ if (!($result = $DBCONN->query($sql))) {
             UPDATE `{$db_name_drupal}`.`node`
             SET `vid` = {$revision_id}
             WHERE `nid` = {$node_id}
+        ";
+        if (!$DBCONN->query($sql)) {
+            error_out($DBCONN->error . ". Query: " . $sql);
+        }
+
+        // set default worflow status
+        $sql = "
+            INSERT INTO `{$db_name_drupal}`.`workbench_moderation_node_history`
+            SET `vid` = {$revision_id},
+            `nid` = {$node_id},
+            `from_state` = 'draft',
+            `state` = 'draft',
+            `uid` = ${user_id},
+            `stamp` = {$now},
+            `published` = 0,
+            `current` = 1
         ";
         if (!$DBCONN->query($sql)) {
             error_out($DBCONN->error . ". Query: " . $sql);
