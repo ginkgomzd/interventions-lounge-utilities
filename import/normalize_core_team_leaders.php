@@ -12,6 +12,15 @@ define('DB_TABL', 'core_team_leaders');
 
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->connect_errno);
 
+$delete = "
+DELETE FROM " . DB_TABL . "
+WHERE `email` IS NULL
+";
+
+if (!$DBCONN->query($delete)) {
+    error_out($DBCONN->error . ". Query: $delete");
+}
+
 $select = "
 SELECT `id`, `raw_organization`, `raw_fname`, `raw_lname`, `raw_email`, `raw_phone`, `raw_fax`
 FROM " . DB_TABL . "
