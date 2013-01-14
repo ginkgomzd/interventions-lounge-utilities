@@ -59,10 +59,47 @@ function insert_drupal_cck_field($field_name, array $pairs) {
     }
 }
 
-/*
- * stub
+/**
+ * Given user email, returns user_id. If no user with that email exists, the
+ * user is created and the generated ID returned. Drupal is bootstrapped during
+ * this function.
+ *
+ * @param string Email address
+ * @return in User ID
  */
 function get_user_id($email) {
-    return '1';
+    // setting this avoids some PHP notices during bootstrap
+    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+    require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
+    drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+
+    $user_id = FALSE;
+
+    // try to find the user first
+    $account = user_load_by_mail($email);
+    if ($account) {
+        $user_id = $account->uid;
+    } else {
+        // we can't find the user, so let's create one
+        $account = new stdClass();
+        $account->is_new = TRUE;
+
+        $data = array(
+            'name' => $email,
+            'pass' => user_password(),
+            'mail' => $email,
+            'status' => 1,
+            'init' => $email,
+            'roles' => array(
+                8 => 'Core Team Lead',
+            ),
+        );
+
+        $account = user_save($account, $data);
+        $user_id = $account->uid;
+    }
+
+    return $user_id;
 }
 ?>
