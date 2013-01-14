@@ -112,7 +112,7 @@ if (!($result = $DBCONN->query($sql))) {
     );
 
     while ($row = $result->fetch_assoc()) {
-        $user_id = get_user_id($row['email']);
+        $user_id = ($row['email'] ? get_user_id($row['email']) : 1); // default to admin
         $now = time();
         $outcome_indicators = $row['out_i'] . "\n\n" . $row['out_g'];
 
