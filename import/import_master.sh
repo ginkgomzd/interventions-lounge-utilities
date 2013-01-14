@@ -50,6 +50,9 @@ drush -y en interventions_lounge
 # turn gmap_location back on
 drush -y en gmap_location gmap_taxonomy gmap
 
+# add admin user to ATD moderators role
+drush -y user-add-role "ATD Staff Moderator" --uid=1
+
 # return to current path
 cd ${CUR_PATH}
 
