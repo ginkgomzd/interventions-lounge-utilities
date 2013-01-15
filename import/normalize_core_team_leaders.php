@@ -62,6 +62,15 @@ while ($row = $result->fetch_assoc()) {
     }
 }
 
+$delete = "
+DELETE FROM " . DB_TABL . "
+WHERE `email` IS NULL
+";
+
+if (!$DBCONN->query($delete)) {
+    error_out($DBCONN->error . ". Query: $delete");
+}
+
 mysqli_close($DBCONN);
 die(0);
 

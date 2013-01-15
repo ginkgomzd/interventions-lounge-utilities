@@ -8,8 +8,6 @@
  * @return boolean 0 on success, 1 on failure
  */
 require_once __DIR__ . '/common.inc';
-$db_name_drupal = 'achievingthedream_org';
-$db_name_import = 'atd_import';
 $field_name_external_id = 'field_external_id'; // should include the "field_" prefix
 
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($DBCONN->connect_errno);

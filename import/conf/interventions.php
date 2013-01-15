@@ -14,7 +14,7 @@ define('FILE_CONTAINS_HEADINGS', TRUE);
 define('TABLE_CREATE_STATEMENT',
     "CREATE TABLE IF NOT EXISTS `interventions` (
       `institution_id` varchar(19) DEFAULT NULL,
-      `reporting_year` varchar(14) DEFAULT NULL,
+      `reporting_year` varchar(37) DEFAULT NULL,
       `institution_name` varchar(69) DEFAULT NULL,
       `intervention_name` varchar(174) DEFAULT NULL,
       `intervention_status` varchar(12) DEFAULT NULL,

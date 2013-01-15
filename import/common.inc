@@ -27,4 +27,86 @@ function error_out($msg) {
     die(1);
 }
 
+/**
+ * This function is used to insert content into CCK fields.
+ *
+ * @global object $DBCONN Global database connection
+ * @param string $field_name The name of the CCK field, sans field_ prefix.
+ * @param array $pairs Keyed by database field names, values to be inserted.
+ * @return void
+ */
+function insert_drupal_cck_field($field_name, array $pairs) {
+    global $DBCONN, $db_name_drupal;
+
+    if ($field_name !== 'body') {
+        $field_name = 'field_' . $field_name;
+    }
+
+    $set_clause = array();
+    foreach ($pairs as $k => $v) {
+        $set_clause[] = "`{$k}` = '" . $DBCONN->real_escape_string($v) . "'";
+    }
+
+    foreach (array('data', 'revision') as $type) {
+        $sql = "
+            INSERT INTO `{$db_name_drupal}`.`field_{$type}_{$field_name}`
+            SET `language` = 'und'," .
+                implode(', ', $set_clause);
+
+        if (!$DBCONN->query($sql)) {
+            error_out($DBCONN->error . ". Query: " . $sql);
+        }
+    }
+}
+
+/**
+ * Given user email, returns user_id. If no user with that email exists, the
+ * user is created and the generated ID returned. Drupal is bootstrapped during
+ * this function.
+ *
+ * @param string $email Email address
+ * @param boolean $sendmail If set to TRUE, newly created users will be notified
+ * of their account.
+ * @return in User ID
+ */
+function get_user_id($email, $sendmail = FALSE) {
+    // setting this avoids some PHP notices during bootstrap
+    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+    require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
+    drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+
+    $user_id = FALSE;
+
+    // try to find the user first
+    $account = user_load_by_mail($email);
+    if ($account) {
+        $user_id = $account->uid;
+    } else {
+        // we can't find the user, so let's create one
+        $account = new stdClass();
+        $account->is_new = TRUE;
+
+        $data = array(
+            'name' => $email,
+            'pass' => user_password(),
+            'mail' => $email,
+            'status' => 1,
+            'init' => $email,
+            'roles' => array(
+                8 => 'Core Team Lead',
+            ),
+        );
+
+        $account = user_save($account, $data);
+        $user_id = $account->uid;
+
+        // send welcome message if appropriate
+        if ($sendmail === TRUE) {
+            _user_mail_notify('register_admin_created', $account);
+        }
+    }
+
+    return $user_id;
+}
 ?>
