@@ -4,9 +4,17 @@
  * Import Interventions data.
  *
  * @param string Name of config file
+ * @param boolean If set to TRUE, newly created users will be notified
+ * of their account.
  * @return boolean 0 on success, 1 on failure
  */
 require_once __DIR__ . '/common.inc';
+
+if ($argc < 3) {
+    $sendmail = FALSE;
+} else {
+    $sendmail = $argv[2];
+}
 
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($DBCONN->connect_errno);
 
@@ -112,7 +120,7 @@ if (!($result = $DBCONN->query($sql))) {
     );
 
     while ($row = $result->fetch_assoc()) {
-        $user_id = ($row['email'] ? get_user_id($row['email']) : 1); // default to admin
+        $user_id = ($row['email'] ? get_user_id($row['email'], $sendmail) : 1); // default to admin
         $now = time();
         $outcome_indicators = $row['out_i'] . "\n\n" . $row['out_g'];
 
