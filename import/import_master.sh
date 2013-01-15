@@ -1,8 +1,18 @@
 #!/bin/bash
 
+# @param If called with flag --sendmail, then the import will send welcome
+# emails to newly registered users; otherwise no emails will be sent
+
 # This is the master import script. All of our other scripts have discrete
 # purposes. This a meta script; it just calls our other scripts in the right
 # order.
+
+# Determine whether or not this import should email newly created users about
+# their accounts. Obviously we don't want to do this on staging imports.
+MAIL_ENABLED="FALSE"
+if [ "$1" == "--sendmail" ]
+        then MAIL_ENABLED="TRUE"
+fi
 
 # paths
 MY_PATH="`dirname \"$0\"`" # path to import scripts
@@ -60,7 +70,7 @@ cd ${CUR_PATH}
 ${MY_PATH}/import_update_institutions.php ${MY_PATH}/conf/db.php
 
 # import interventions
-${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php
+${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php $MAIL_ENABLED
 
 # import interventions contacts
 ${MY_PATH}/import_intervention_contacts.php ${MY_PATH}/conf/db.php
