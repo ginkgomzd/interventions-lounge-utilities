@@ -1,8 +1,18 @@
 #!/bin/bash
 
+# @param If called with flag --sendmail, then the import will send welcome
+# emails to newly registered users; otherwise no emails will be sent
+
 # This is the master import script. All of our other scripts have discrete
 # purposes. This a meta script; it just calls our other scripts in the right
 # order.
+
+# Determine whether or not this import should email newly created users about
+# their accounts. Obviously we don't want to do this on staging imports.
+MAIL_ENABLED="FALSE"
+if [ "$1" == "--sendmail" ]
+        then MAIL_ENABLED="TRUE"
+fi
 
 # paths
 MY_PATH="`dirname \"$0\"`" # path to import scripts
@@ -18,21 +28,40 @@ ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/interventions.php ${MY_PATH
 ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/gdoc.php ${MY_PATH}/data/gdoc.csv
 ${MY_PATH}/import_content_to_sql.php ${MY_PATH}/conf/core_team_leaders.php ${MY_PATH}/data/core_team_leaders.csv
 
-# clean up imported gdoc (multiselect) data
+# clean up data
+${MY_PATH}/normalize_interventions.php ${MY_PATH}/conf/db.php
 ${MY_PATH}/normalize_gdoc.php ${MY_PATH}/conf/db.php
 ${MY_PATH}/normalize_gdoc_content.php ${MY_PATH}/conf/db.php
-
-# clean up imported core_team_leaders data
 ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 
 # get into drush-friendly environment
 cd ${SITE_PATH}
 
+# for safety, put the site into maintenance mode before touching the DB
+drush vset --exact -y maintenance_mode 1
+drush cc all # apparently variables are cached; this should take care of that
+
+# stupid marker error will break the update, so we disable
+drush -y dis gmap_location gmap_taxonomy gmap
+
+# update salesforce suite and install features
+drush -y dl salesforce-7.x-2.0-alpha3
+drush -y updb
+drush pml 2> /dev/null | grep features &> /dev/null
+if [ $? != 0 ]
+then
+    drush dl features &> /dev/null
+fi
+drush -y en features
+
 # enable meta module
 drush -y en interventions_lounge
 
-# download the js library for the intervention-contact phone field
-drush -y masked_input-library
+# turn gmap_location back on
+drush -y en gmap_location gmap_taxonomy gmap
+
+# add admin user to ATD moderators role
+drush -y user-add-role "ATD Staff Moderator" --uid=1
 
 # return to current path
 cd ${CUR_PATH}
@@ -41,11 +70,13 @@ cd ${CUR_PATH}
 ${MY_PATH}/import_update_institutions.php ${MY_PATH}/conf/db.php
 
 # import interventions
+${MY_PATH}/import_interventions.php ${MY_PATH}/conf/db.php $MAIL_ENABLED
 
+# import interventions contacts
+${MY_PATH}/import_intervention_contacts.php ${MY_PATH}/conf/db.php
 
-# TODO: write script which imports an Intervention and checks the corresponding
-# institution_id in the core_team_leaders table. We use the data in core_team_leaders
-# to find or create a Drupal user and the data in Institution table to create
-# an Intervention Contact record. The IC is added as a node-reference to the
-# Intervention record, and both records are owned by the found/created Drupal
-# user. This is over-simplified; we'll have some fun joins to play with.
+# take Drupal out of maintenance mode
+cd ${SITE_PATH}
+drush vset --exact -y maintenance_mode 0
+drush cc all
+cd ${CUR_PATH}
