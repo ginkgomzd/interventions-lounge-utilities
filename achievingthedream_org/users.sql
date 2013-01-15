@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES (0,'','','','','',NULL,0,0,0,0,NULL,'',0,'',NULL);
-INSERT INTO `users` VALUES (1,'admin','$S$DE0OtQaldyjPrJmLzMv.2RDPQkAF4qF/lm3KBHjwnlWe5kXi4/F5','margaux@grandjunctiondesign.com','','','filtered_html',1320355382,1357316448,1357225936,1,'America/New_York','',0,'margaux@grandjunctiondesign.com','a:1:{s:7:\"contact\";i:0;}');
+INSERT INTO `users` VALUES (1,'admin','$S$DE0OtQaldyjPrJmLzMv.2RDPQkAF4qF/lm3KBHjwnlWe5kXi4/F5','margaux@grandjunctiondesign.com','','','filtered_html',1320355382,1357680653,1357584200,1,'America/New_York','',0,'margaux@grandjunctiondesign.com','a:1:{s:7:\"contact\";i:0;}');
 INSERT INTO `users` VALUES (9,'matthew','$S$DizyuX.WD2OhRkE6EepTzOIL400auQCQewQfhwzl43.GYyMqnhN6','matthew@grandjunctiondesign.com','','','filtered_html',1321444075,1349291982,1349287950,1,'America/Denver','',0,'matthew@grandjunctiondesign.com','a:1:{s:7:\"contact\";i:0;}');
 INSERT INTO `users` VALUES (10,'rick','$S$DQtJuBQzJBcOer58l3a26sXe9LAgIsyVoPBsZo7SXtXPusBx1xQY','elricky@gmail.com','','','filtered_html',1321913552,1354184988,1353998668,1,'Asia/Tokyo','',0,'elricky@gmail.com','a:1:{s:7:\"contact\";i:0;}');
 INSERT INTO `users` VALUES (12,'lauren','$S$Dp06M43hpHdkcmmqvIDljqsKSUSERnZg1p5V5yPhiLKWR3JjQSaZ','llewis@achievingthedream.org','','','filtered_html',1321993193,1357309935,1357240385,1,'America/Denver','',0,'llewis@achievingthedream.org','a:1:{s:7:\"contact\";i:1;}');
