@@ -64,10 +64,12 @@ function insert_drupal_cck_field($field_name, array $pairs) {
  * user is created and the generated ID returned. Drupal is bootstrapped during
  * this function.
  *
- * @param string Email address
+ * @param string $email Email address
+ * @param boolean $sendmail If set to TRUE, newly created users will be notified
+ * of their account.
  * @return in User ID
  */
-function get_user_id($email) {
+function get_user_id($email, $sendmail = FALSE) {
     // setting this avoids some PHP notices during bootstrap
     $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
 
@@ -98,6 +100,11 @@ function get_user_id($email) {
 
         $account = user_save($account, $data);
         $user_id = $account->uid;
+
+        // send welcome message if appropriate
+        if ($sendmail === TRUE) {
+            _user_mail_notify('register_admin_created', $account);
+        }
     }
 
     return $user_id;
