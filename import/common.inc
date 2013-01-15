@@ -102,7 +102,7 @@ function get_user_id($email, $sendmail = FALSE) {
         $user_id = $account->uid;
 
         // send welcome message if appropriate
-        if ($sendmail === TRUE) {
+        if ($sendmail === TRUE || $sendmail === "TRUE") {
             _user_mail_notify('register_admin_created', $account);
         }
     }
