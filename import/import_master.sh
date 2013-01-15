@@ -53,6 +53,9 @@ then
     drush dl features &> /dev/null
 fi
 drush -y en features
+# get features extra, let the interventions_lounge module 
+# enable the sub-modules it needs
+drush dl features_extra
 
 # enable meta module
 drush -y en interventions_lounge
