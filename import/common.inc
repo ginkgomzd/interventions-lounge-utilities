@@ -103,7 +103,15 @@ function get_user_id($email, $sendmail = FALSE) {
 
         // send welcome message if appropriate
         if ($sendmail === TRUE || $sendmail === "TRUE") {
-            _user_mail_notify('register_admin_created', $account);
+            drupal_mail(
+                'user',
+                'register_admin_created',
+                $email,
+                NULL,
+                array('account' => $account),
+                variable_get('site_email', 'no-reply@achievingthedream.org'),
+                TRUE
+            );
         }
     }
 
