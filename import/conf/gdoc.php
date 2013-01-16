@@ -14,7 +14,7 @@ define('FILE_CONTAINS_HEADINGS', TRUE);
 define('TABLE_CREATE_STATEMENT',
     "CREATE TABLE IF NOT EXISTS `gdoc` (
       `institution_name` varchar(46) DEFAULT NULL,
-      `intervention_id` varchar(3) NOT NULL DEFAULT '',
+      `intervention_id` varchar(4) NOT NULL DEFAULT '',
       `intervention_type` varchar(441) DEFAULT NULL,
       `content_area` varchar(122) DEFAULT NULL,
       `target_population` varchar(444) DEFAULT NULL,
