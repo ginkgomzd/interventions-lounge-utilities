@@ -26,13 +26,14 @@ if (!($result = $DBCONN->query($sql))) {
     }
 
     while ($row = $result->fetch_assoc()) {
+        $title = $DBCONN->real_escape_string(trim($row['fname'] . ' ' . $row['lname']));
         $now = time();
 
         // insert base node with placeholder uid
         $sql = "
             INSERT INTO `{$db_name_drupal}`.`node`
             SET `type` = 'intervention_contact',
-                `title` = '{$row['title']}',
+                `title` = '{$title}',
                 `language` = 'und',
                 `uid` = 1,
                 `created` = {$now},
@@ -47,7 +48,7 @@ if (!($result = $DBCONN->query($sql))) {
         $sql = "
             INSERT INTO `{$db_name_drupal}`.`node_revision`
             SET `nid` = {$node_id},
-            `title` = '{$row['title']}',
+            `title` = '{$title}',
             `log` = 'Grand Junction Design Content Migration',
             `uid` = 1,
             `timestamp` = {$now}
@@ -139,21 +140,19 @@ if (!($result = $DBCONN->query($sql))) {
             'revision_id' => $revision_id,
         );
 
-        $insert['field_first_name_value'] = $row['fname'];
-        $insert['field_first_name_format'] = NULL;
-        insert_drupal_cck_field('first_name', $insert);
-        unset($insert['field_first_name_value']);
-        unset($insert['field_first_name_format']);
+        if ($row['title']) {
+            $insert['field_job_title_value'] = $row['title'];
+            $insert['field_job_title_format'] = NULL;
+            insert_drupal_cck_field('job_title', $insert);
+            unset($insert['field_job_title_value']);
+            unset($insert['field_job_title_format']);
+        }
 
-        $insert['field_last_name_value'] = $row['lname'];
-        $insert['field_last_name_format'] = NULL;
-        insert_drupal_cck_field('last_name', $insert);
-        unset($insert['field_last_name_value']);
-        unset($insert['field_last_name_format']);
-
-        $insert['field_email_email'] = $row['email'];
-        insert_drupal_cck_field('email', $insert);
-        unset($insert['field_email_email']);
+        if ($row['email']) {
+            $insert['field_email_email'] = $row['email'];
+            insert_drupal_cck_field('email', $insert);
+            unset($insert['field_email_email']);
+        }
 
         // TODO: import phone #s
 
