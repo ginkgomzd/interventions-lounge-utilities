@@ -101,30 +101,4 @@ function extract_from_hyperlink($str, $type = 'id') {
 
     return $result;
 }
-
-/*
- * Return the parts of a phone number
- *
- * @param string $str Phone number
- * @return array Key 'main' contains 10-digit number; key 'ext' contains extension
- */
-function get_phone_parts($str) {
-    $result = array(
-        'main' => NULL,
-        'ext' => NULL
-    );
-
-    $parts = explode('x', $str);
-    if (count($parts) > 2) {
-        error_out('Error condition in get_phone_parts: Number has more than 2 parts');
-    }
-
-    $result['main'] = preg_replace('#[^0-9]#', '', $parts[0]);
-
-    if (array_key_exists(1, $parts)) {
-        $result['ext'] = preg_replace('#[^0-9]#', '', $parts[1]);
-    }
-
-    return $result;
-}
 ?>
