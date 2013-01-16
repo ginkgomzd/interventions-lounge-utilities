@@ -44,7 +44,11 @@ function insert_drupal_cck_field($field_name, array $pairs) {
 
     $set_clause = array();
     foreach ($pairs as $k => $v) {
-        $set_clause[] = "`{$k}` = '" . $DBCONN->real_escape_string($v) . "'";
+        if (is_null($v)) {
+            $set_clause[] = "`{$k}` = NULL";
+        } else {
+            $set_clause[] = "`{$k}` = '" . $DBCONN->real_escape_string($v) . "'";
+        }
     }
 
     foreach (array('data', 'revision') as $type) {
