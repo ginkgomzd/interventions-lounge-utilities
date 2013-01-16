@@ -15,6 +15,18 @@ $q = array();
 
 $q[] = "
 UPDATE " . DB_TABL . "
+SET `content_area` = NULL
+WHERE `content_area` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `content_area` = 'Student Success'
+WHERE `content_area` = 'Student success'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
 SET `ethnicity` = NULL
 WHERE `ethnicity` = ''
 ";
@@ -63,6 +75,18 @@ WHERE `intervention_status` = ''
 
 $q[] = "
 UPDATE " . DB_TABL . "
+SET `intervention_type` = NULL
+WHERE `intervention_type` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `intervention_type` = 'Gatekeeper Courses'
+WHERE `intervention_type` = 'Gateway Courses'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
 SET `promising` = NULL
 WHERE `promising` IN ('', 'Need more info')
 ";
@@ -94,6 +118,66 @@ WHERE `start_date` = ''
 $q[] = "
 UPDATE " . DB_TABL . "
 SET `start_date` = CONCAT(LEFT(`start_date`,4), '-01-01 00:00:00')
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = NULL
+WHERE `target_population` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'Academically Underprepared Students'
+WHERE `target_population` = 'Academically underprepared students'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'All Students'
+WHERE `target_population` = 'All students'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'Faculty and Staff'
+WHERE `target_population` = 'Faculty and staff'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'Financial Aid Status'
+WHERE `target_population` = 'Financial aid status'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'First-time Students'
+WHERE `target_population` = 'First-time students'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'ESL-ESOL-ELL'
+WHERE `target_population` = 'ESL/ESOL/ELL'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `target_population` = 'Enrollment: Full Time Students'
+WHERE `target_population` = 'Enrollment: Full Time students'
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `race` = NULL
+WHERE `race` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
+SET `race` = 'Black or African American non-Hispanic'
+WHERE `race` = 'Black/African American non-Hispanic'
 ";
 
 foreach ($q as $sql) {
