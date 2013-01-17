@@ -20,11 +20,13 @@ define('TABLE_CREATE_STATEMENT',
       `lname` varchar(13) DEFAULT NULL COMMENT 'Team Leader Last Name',
       `title` varchar(74) DEFAULT NULL COMMENT 'Team Leader Title',
       `email` varchar(33) DEFAULT NULL COMMENT 'Team Leader Email Address',
-      `phone` varchar(26) DEFAULT NULL COMMENT 'Team Leader Phone Number',
+      `phone` char(10) DEFAULT NULL COMMENT 'Team Leader Phone Number',
+      `phone_ext` char(10) DEFAULT NULL COMMENT 'Team Leader Extension',
       `state` varchar(20) DEFAULT NULL,
       `opted_out` varchar(2) DEFAULT NULL COMMENT 'Opted out of publishing interventions',
       `interventions` varchar(18) DEFAULT NULL,
       `add_intervention_link` varchar(93) DEFAULT NULL,
+      `raw_phone` varchar(26) DEFAULT NULL COMMENT 'Team Leader Raw Phone',
       PRIMARY KEY (`institution_id`)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8;"
 );
@@ -37,7 +39,7 @@ $fields = array(
       'lname',
       'title',
       'email',
-      'phone',
+      'raw_phone',
       'state',
       'opted_out',
       'interventions',
