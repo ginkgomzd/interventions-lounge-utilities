@@ -42,6 +42,9 @@ cd ${SITE_PATH}
 drush vset --exact -y maintenance_mode 1
 drush cc all # apparently variables are cached; this should take care of that
 
+# uninstall certain modules via the database; helps clean up mess on production
+${MY_PATH}/uninstall_modules.php ${MY_PATH}/conf/db.php
+
 # stupid marker error will break the update, so we disable
 drush -y dis gmap_location gmap_taxonomy gmap
 
@@ -60,6 +63,9 @@ drush -y dl features_extra
 
 # enable meta module
 drush -y en interventions_lounge
+
+#for good measure, revert all features; helps clean up mess on production
+drush -y features-revert-all
 
 # turn gmap_location back on
 drush -y en gmap_location gmap_taxonomy gmap
