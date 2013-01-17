@@ -198,41 +198,51 @@ if (!($result = $DBCONN->query($sql))) {
         insert_drupal_cck_field('body', $insert);
 
         unset($insert['body_value'], $insert['body_format']);
-        $insert['field_reporting_year_value'] = $row['reporting_year'];
-        insert_drupal_cck_field('reporting_year', $insert);
 
-        unset($insert['field_reporting_year_value']);
-        $insert['field_college_reference_nid'] = $row['institution_nid'];
-        insert_drupal_cck_field('college_reference', $insert);
-
-        unset($insert['field_college_reference_nid']);
-        $intervention_types = array_unique(explode('|', $row['intervention_type']));
-        foreach ($intervention_types as $t) {
-            $insert['field_intervention_type_value'] = @$map_intervention_type[$t];
-            insert_drupal_cck_field('intervention_type', $insert);
-            $insert['delta']++;
+        if ($row['reporting_year']) {
+            $insert['field_reporting_year_value'] = $row['reporting_year'];
+            insert_drupal_cck_field('reporting_year', $insert);
+            unset($insert['field_reporting_year_value']);
         }
-        $insert['delta'] = 0;
 
-        unset($insert['field_intervention_type_value']);
-        $content_areas = array_unique(explode('|', $row['content_area']));
-        foreach ($content_areas as $c) {
-            $insert['field_content_area_value'] = @$map_content_area[$c];
-            insert_drupal_cck_field('content_area', $insert);
-            $insert['delta']++;
+        if ($row['institution_nid']) {
+            $insert['field_college_reference_nid'] = $row['institution_nid'];
+            insert_drupal_cck_field('college_reference', $insert);
+            unset($insert['field_college_reference_nid']);
         }
-        $insert['delta'] = 0;
 
-
-        unset($insert['field_content_area_value']);
-        $tp = array_unique(explode('|', $row['target_population']));
-        foreach ($tp as $t) {
-            $insert['field_target_population_value'] = @$map_target_pop[$t];
-            insert_drupal_cck_field('target_population', $insert);
-            $insert['delta']++;
+        if ($row['intervention_type']) {
+            $intervention_types = array_unique(explode('|', $row['intervention_type']));
+            foreach ($intervention_types as $t) {
+                $insert['field_intervention_type_value'] = @$map_intervention_type[$t];
+                insert_drupal_cck_field('intervention_type', $insert);
+                $insert['delta']++;
+            }
+            $insert['delta'] = 0;
+            unset($insert['field_intervention_type_value']);
         }
-        $insert['delta'] = 0;
-        unset($insert['field_target_population_value']);
+
+        if ($row['content_area']) {
+            $content_areas = array_unique(explode('|', $row['content_area']));
+            foreach ($content_areas as $c) {
+                $insert['field_content_area_value'] = @$map_content_area[$c];
+                insert_drupal_cck_field('content_area', $insert);
+                $insert['delta']++;
+            }
+            $insert['delta'] = 0;
+            unset($insert['field_content_area_value']);
+        }
+
+        if ($row['target_population']) {
+            $tp = array_unique(explode('|', $row['target_population']));
+            foreach ($tp as $t) {
+                $insert['field_target_population_value'] = @$map_target_pop[$t];
+                insert_drupal_cck_field('target_population', $insert);
+                $insert['delta']++;
+            }
+            $insert['delta'] = 0;
+            unset($insert['field_target_population_value']);
+        }
 
         if ($row['gender']) {
             $insert['field_target_gender_value'] = $row['gender'];
@@ -240,49 +250,65 @@ if (!($result = $DBCONN->query($sql))) {
             unset($insert['field_target_gender_value']);
         }
 
-        $insert['field_target_ethnicity_value'] = $row['ethnicity'];
-        insert_drupal_cck_field('target_ethnicity', $insert);
-
-        unset($insert['field_target_ethnicity_value']);
-        $race = array_unique(explode('|', $row['race']));
-        foreach ($race as $r) {
-            $insert['field_target_race_value'] = @$map_race[$r];
-            insert_drupal_cck_field('target_race', $insert);
-            $insert['delta']++;
+        if ($row['ethnicity']) {
+            $insert['field_target_ethnicity_value'] = $row['ethnicity'];
+            insert_drupal_cck_field('target_ethnicity', $insert);
+            unset($insert['field_target_ethnicity_value']);
         }
-        $insert['delta'] = 0;
 
-        unset($insert['field_target_race_value']);
-        $insert['field_start_year_value'] = $row['start_date'];
-        insert_drupal_cck_field('start_year', $insert);
+        if ($row['race']) {
+            $race = array_unique(explode('|', $row['race']));
+            foreach ($race as $r) {
+                $insert['field_target_race_value'] = @$map_race[$r];
+                insert_drupal_cck_field('target_race', $insert);
+                $insert['delta']++;
+            }
+            $insert['delta'] = 0;
+            unset($insert['field_target_race_value']);
+        }
 
-        unset($insert['field_start_year_value']);
+        if ($row['start_date']) {
+            $insert['field_start_year_value'] = $row['start_date'];
+            insert_drupal_cck_field('start_year', $insert);
+            unset($insert['field_start_year_value']);
+        }
+
         $insert['field_promising_practice_value'] = $row['promising'];
         insert_drupal_cck_field('promising_practice', $insert);
-
         unset($insert['field_promising_practice_value']);
-        $insert['field_why_promising_value'] = $row['promising_desc'];
-        $insert['field_why_promising_format'] = 'filtered_html';
-        insert_drupal_cck_field('why_promising', $insert);
 
-        unset($insert['field_why_promising_value']);
-        unset($insert['field_why_promising_format']);
-        $insert['field_proportion_served_value'] = $row['proportion_served'];
-        insert_drupal_cck_field('proportion_served', $insert);
+        if ($row['promising_desc']) {
+            $insert['field_why_promising_value'] = $row['promising_desc'];
+            $insert['field_why_promising_format'] = 'filtered_html';
+            insert_drupal_cck_field('why_promising', $insert);
+            unset($insert['field_why_promising_value']);
+            unset($insert['field_why_promising_format']);
+        }
 
-        unset($insert['field_proportion_served_value']);
-        $insert['field_outcome_indicators_value'] = $outcome_indicators;
-        $insert['field_outcome_indicators_format'] = 'filtered_html';
-        insert_drupal_cck_field('outcome_indicators', $insert);
+        if ($row['proportion_served']) {
+            $insert['field_proportion_served_value'] = $row['proportion_served'];
+            insert_drupal_cck_field('proportion_served', $insert);
+            unset($insert['field_proportion_served_value']);
+        }
 
-        unset($insert['field_outcome_indicators_value']);
-        unset($insert['field_outcome_indicators_format']);
-        $insert['field_legacy_id_value'] = $row['intervention_id'];
-        insert_drupal_cck_field('legacy_id', $insert);
+        if ($outcome_indicators) {
+            $insert['field_outcome_indicators_value'] = $outcome_indicators;
+            $insert['field_outcome_indicators_format'] = 'filtered_html';
+            insert_drupal_cck_field('outcome_indicators', $insert);
+            unset($insert['field_outcome_indicators_value']);
+            unset($insert['field_outcome_indicators_format']);
+        }
 
-        unset($insert['field_legacy_id_value']);
-        $insert['field_intervention_status_value'] = @$map_status[$row['intervention_status']];
-        insert_drupal_cck_field('intervention_status', $insert);
+        if ($row['intervention_id']) {
+            $insert['field_legacy_id_value'] = $row['intervention_id'];
+            insert_drupal_cck_field('legacy_id', $insert);
+            unset($insert['field_legacy_id_value']);
+        }
+
+        if ($row['intervention_status']) {
+            $insert['field_intervention_status_value'] = @$map_status[$row['intervention_status']];
+            insert_drupal_cck_field('intervention_status', $insert);
+        }
     }
 
     // restore dropped node key
