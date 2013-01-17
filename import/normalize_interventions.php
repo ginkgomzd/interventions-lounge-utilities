@@ -117,11 +117,6 @@ WHERE `start_date` = ''
 
 $q[] = "
 UPDATE " . DB_TABL . "
-SET `start_date` = CONCAT(LEFT(`start_date`,4), '-01-01 00:00:00')
-";
-
-$q[] = "
-UPDATE " . DB_TABL . "
 SET `target_population` = NULL
 WHERE `target_population` = ''
 ";

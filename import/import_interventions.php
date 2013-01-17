@@ -269,8 +269,10 @@ if (!($result = $DBCONN->query($sql))) {
 
         if ($row['start_date']) {
             $insert['field_start_year_value'] = $row['start_date'];
+            $insert['field_start_year_format'] = NULL;
             insert_drupal_cck_field('start_year', $insert);
             unset($insert['field_start_year_value']);
+            unset($insert['field_start_year_format']);
         }
 
         $insert['field_promising_practice_value'] = $row['promising'];
