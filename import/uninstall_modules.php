@@ -9,7 +9,7 @@
  */
 require_once __DIR__ . '/common.inc';
 
-$DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->connect_errno);
+$DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($DBCONN->connect_errno);
 
 $select = "
 DELETE FROM `system`
