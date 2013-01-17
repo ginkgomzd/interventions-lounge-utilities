@@ -19,11 +19,24 @@ if ($argc < 3) {
 $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($DBCONN->connect_errno);
 
 $sql = "
-SELECT i.`intervention_name`, i.`reporting_year`, n.`nid` institution_nid, g.`intervention_type`,
-    g.`content_area`, g.`target_population`, i.`gender`, i.`ethnicity`, g.`race`, i.`start_date`,
-    i.`description`, i.`promising`, i.`promising_desc`, i.`proportion_served`,
-    i.`outcome_indicators` out_i, g.`outcome_indicators` out_g,
-    i.`intervention_id`, i.`intervention_status`, c.`email`
+SELECT i.`intervention_name`,
+    i.`reporting_year`,
+    n.`nid` institution_nid,
+    i.`intervention_type` intervention_type_i, g.`intervention_type` intervention_type_g,
+    i.`content_area` content_area_i, g.`content_area` content_area_g,
+    i.`target_population` target_population_i, g.`target_population` target_population_g,
+    i.`gender`,
+    i.`ethnicity`,
+    i.`race` race_i, g.`race` race_g,
+    i.`start_date`,
+    i.`description`,
+    i.`promising`,
+    i.`promising_desc`,
+    i.`proportion_served`,
+    i.`outcome_indicators` outcome_indicators_i, g.`outcome_indicators` outcome_indicators_g,
+    i.`intervention_id`,
+    i.`intervention_status`,
+    c.`email`
 FROM `{$db_name_import}`.`interventions` i
 LEFT JOIN `{$db_name_import}`.`gdoc` g
 ON i.`intervention_id` = g.`intervention_id`
@@ -46,36 +59,38 @@ if (!($result = $DBCONN->query($sql))) {
 
     // set up value mapping
     $map_intervention_type = array(
-        'Admissions' => '0',
-        'Advising' => '1',
-        'Board of Trustees' => '2',
-        'Budgeting Process' => '3',
-        'Committee or Governance Structure' => '4',
-        'Community Engagement' => '5',
-        'Developmental Education' => '6',
-        'Dual Credit Office' => '7',
-        'Equity' => '8',
-        'Faculty Professional Development' => '9',
-        'First-Year Experience' => '10',
-        'Gatekeeper Courses' => '11',
-        'Improved Use of Data' => '12',
-        'Information Systems' => '13',
-        'Institutional Effectiveness' => '14',
-        'Institutional Research' => '15',
-        'Internal Policy Review & Update' => '16',
-        'K-14 Strategies' => '17',
-        'Learning Communities' => '18',
-        'Mentoring' => '19',
-        'Policy Change' => '20',
-        'Program Evaluation Process' => '21',
-        'Staff Engagement' => '22',
-        'Student Engagement' => '23',
-        'Student Success Course' => '24',
-        'Student Support Services' => '25',
-        'Supplemental Instruction' => '26',
-        'Testing' => '27',
-        'Tutoring' => '28',
-        'Other' => '29',
+          'Admissions' => '0',
+          'Advising' => '1',
+          'Board of Trustees' => '2',
+          'Budgeting Process' => '3',
+          'Committee or Governance Structure' => '4',
+          'Community Engagement' => '5',
+          'Course Redesign' => '6',
+          'Developmental Education' => '7',
+          'Dual Credit Office' => '8',
+          'Equity' => '9',
+          'Faculty Professional Development' => '10',
+          'First-Year Experience' => '11',
+          'Gatekeeper Courses' => '12',
+          'Improved Use of Data' => '13',
+          'Information Systems' => '14',
+          'Institutional Effectiveness' => '15',
+          'Institutional Research' => '16',
+          'Internal Policy Review & Update' => '17',
+          'K-14 Strategies' => '18',
+          'Learning Communities' => '19',
+          'Mentoring' => '20',
+          'Orientation' => '21',
+          'Policy Change' => '22',
+          'Program Evaluation Process' => '23',
+          'Staff Engagement' => '24',
+          'Student Engagement' => '25',
+          'Student Success Course' => '26',
+          'Student Support Services' => '27',
+          'Supplemental Instruction' => '28',
+          'Testing' => '29',
+          'Tutoring' => '30',
+          'Other' => '31',
     );
 
     $map_content_area = array(
@@ -122,7 +137,11 @@ if (!($result = $DBCONN->query($sql))) {
     while ($row = $result->fetch_assoc()) {
         $user_id = ($row['email'] ? get_user_id($row['email'], $sendmail) : 1); // default to admin
         $now = time();
-        $outcome_indicators = $row['out_i'] . "\n\n" . $row['out_g'];
+        $row['outcome_indicators'] = trim($row['outcome_indicators_i'] . "\n\n" . $row['outcome_indicators_g']);
+        $row['intervention_type'] = process_multiselect($row['intervention_type_i'], $row['intervention_type_g']);
+        $row['content_area'] = process_multiselect($row['content_area_i'], $row['content_area_g']);
+        $row['target_population'] = process_multiselect($row['target_population_i'], $row['target_population_g']);
+        $row['race'] = process_multiselect($row['race_i'], $row['race_g']);
 
         if (!$row['intervention_name']) {
             $row['intervention_name'] = "Intervention {$row['intervention_id']}";
@@ -293,8 +312,8 @@ if (!($result = $DBCONN->query($sql))) {
             unset($insert['field_proportion_served_value']);
         }
 
-        if ($outcome_indicators) {
-            $insert['field_outcome_indicators_value'] = $outcome_indicators;
+        if ($row['outcome_indicators']) {
+            $insert['field_outcome_indicators_value'] = $row['outcome_indicators'];
             $insert['field_outcome_indicators_format'] = 'filtered_html';
             insert_drupal_cck_field('outcome_indicators', $insert);
             unset($insert['field_outcome_indicators_value']);
@@ -320,6 +339,30 @@ if (!($result = $DBCONN->query($sql))) {
     }
 
 
+}
+
+/**
+ * Given two values, take whichever value is not NULL. If neither value is NULL,
+ * concatenate the two with a | character.
+ */
+function process_multiselect($x, $y) {
+    if ($x === '') {
+        $x = NULL;
+    }
+
+    if ($y === '') {
+        $y = NULL;
+    }
+
+    if (is_null($x)) {
+        return $y;
+    }
+
+    if (is_null($y)) {
+        return $x;
+    }
+
+    return "{$x}|{$y}";
 }
 
 mysqli_close($DBCONN);
