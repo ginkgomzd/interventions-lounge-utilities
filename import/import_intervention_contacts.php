@@ -12,7 +12,7 @@ $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($D
 
 $sql = "
 SELECT inst.`institution_id`, inst.`fname`, inst.`lname`, inst.`title`,
-inst.`email`, inst.`phone`
+inst.`email`, inst.`phone`, inst.`phone_ext`
 FROM {$db_name_import}.`institutions` inst
 ";
 
@@ -154,8 +154,15 @@ if (!($result = $DBCONN->query($sql))) {
             unset($insert['field_email_email']);
         }
 
-        // TODO: import phone #s
-
+        if ($row['phone']) {
+            $insert['field_contact_phone_number'] = $row['phone'];
+            $insert['field_contact_phone_country_codes'] = 'us';
+            $insert['field_contact_phone_extension'] = $row['phone_ext'];
+            insert_drupal_cck_field('contact_phone', $insert);
+            unset($insert['field_contact_phone_number']);
+            unset($insert['field_contact_phone_country_codes']);
+            unset($insert['field_contact_phone_extension']);
+        }
     }
 
     // restore dropped node key
