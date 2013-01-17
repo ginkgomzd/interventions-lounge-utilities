@@ -35,15 +35,15 @@ ${MY_PATH}/normalize_gdoc.php ${MY_PATH}/conf/db.php
 ${MY_PATH}/normalize_gdoc_content.php ${MY_PATH}/conf/db.php
 ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 
+# uninstall certain modules via the database; helps clean up mess on production
+${MY_PATH}/uninstall_modules.php ${MY_PATH}/conf/db.php
+
 # get into drush-friendly environment
 cd ${SITE_PATH}
 
 # for safety, put the site into maintenance mode before touching the DB
 drush vset --exact -y maintenance_mode 1
 drush cc all # apparently variables are cached; this should take care of that
-
-# uninstall certain modules via the database; helps clean up mess on production
-${MY_PATH}/uninstall_modules.php ${MY_PATH}/conf/db.php
 
 # stupid marker error will break the update, so we disable
 drush -y dis gmap_location gmap_taxonomy gmap
