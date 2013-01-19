@@ -14,6 +14,11 @@ $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME) OR error_out($DBCONN->c
 $q = array();
 
 $q[] = "
+DELETE FROM " . DB_TABL . "
+WHERE `intervention_name` IN ('', NULL)
+";
+
+$q[] = "
 UPDATE " . DB_TABL . "
 SET `content_area` = NULL
 WHERE `content_area` = ''

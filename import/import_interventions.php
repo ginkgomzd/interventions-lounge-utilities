@@ -143,10 +143,6 @@ if (!($result = $DBCONN->query($sql))) {
         $row['target_population'] = process_multiselect($row['target_population_i'], $row['target_population_g']);
         $row['race'] = process_multiselect($row['race_i'], $row['race_g']);
 
-        if (!$row['intervention_name']) {
-            $row['intervention_name'] = "Intervention {$row['intervention_id']}";
-        }
-
         // insert base node
         $sql = "
             INSERT INTO `{$db_name_drupal}`.`node`
