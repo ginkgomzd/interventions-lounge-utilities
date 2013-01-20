@@ -32,14 +32,8 @@ WHERE `content_area` = 'Student success'
 
 $q[] = "
 UPDATE " . DB_TABL . "
-SET `ethnicity` = NULL
-WHERE `ethnicity` = ''
-";
-
-$q[] = "
-UPDATE " . DB_TABL . "
 SET `ethnicity` = 'All'
-WHERE `ethnicity` = 'All Ethnicities'
+WHERE `ethnicity` IN ('All Ethnicities', '')
 ";
 
 $q[] = "
