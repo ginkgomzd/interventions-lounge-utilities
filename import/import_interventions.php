@@ -46,6 +46,7 @@ LEFT JOIN `{$db_name_drupal}`.`field_data_field_external_id` x
 ON x.`field_external_id_value` = i.`institution_id`
 LEFT JOIN `{$db_name_drupal}`.`node` n
 ON n.`nid` = x.`entity_id`
+WHERE n.`type` = 'college_profile'
 ";
 
 if (!($result = $DBCONN->query($sql))) {
