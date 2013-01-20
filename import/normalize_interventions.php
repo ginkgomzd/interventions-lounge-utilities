@@ -56,7 +56,7 @@ WHERE `ethnicity` = 'Not Hispanic or Latino'
 
 $q[] = "
 UPDATE " . DB_TABL . "
-SET `gender` = NULL
+SET `gender` = 'All'
 WHERE `gender` IN ('', 'n/a', 'Males and Females')
 ";
 
