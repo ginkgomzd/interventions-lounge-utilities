@@ -338,9 +338,11 @@ function get_multiselect_mapping () {
                 '#History#',
                 '#PHIL#',
                 '#POLSC#',
-                '#Psy(chology)?#i',
                 '#Sociology#',
                 '#history#',
+            ),
+            'Psychology' => array(
+                '#Psy(chology)?#i',
             ),
             'Math' => array(
                 '#Basic math, intermediate algebra#',

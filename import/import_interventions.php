@@ -102,6 +102,7 @@ if (!($result = $DBCONN->query($sql))) {
         'English' => '4',
         'Humanities' => '5',
         'Math' => '6',
+        'Psychology' => '10',
         'Reading' => '7',
         'Science' => '8',
         'Student Success' => '9',
