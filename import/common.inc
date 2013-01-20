@@ -91,6 +91,16 @@ function get_user_id($email, $sendmail = FALSE) {
         $account = new stdClass();
         $account->is_new = TRUE;
 
+        /*
+         * But first, let's look up the role ID for "Core Team Lead." Using a
+         * constant allows us to avoid annoying scope issues while also avoiding
+         * looking this up more than we need to.
+         */
+        if (!defined('ROLE_ID_CTL')) {
+            $role_id_ctl = (int) array_search('Core Team Lead', user_roles());
+            define('ROLE_ID_CTL', $role_id_ctl);
+        }
+
         $data = array(
             'name' => $email,
             'pass' => user_password(),
@@ -98,7 +108,7 @@ function get_user_id($email, $sendmail = FALSE) {
             'status' => 1,
             'init' => $email,
             'roles' => array(
-                8 => 'Core Team Lead',
+                ROLE_ID_CTL => 'Core Team Lead',
             ),
         );
 
