@@ -176,7 +176,7 @@ WHERE `target_population` = 'Enrollment: Full Time students'
 
 $q[] = "
 UPDATE " . DB_TABL . "
-SET `race` = NULL
+SET `race` = 'All Races'
 WHERE `race` = ''
 ";
 
