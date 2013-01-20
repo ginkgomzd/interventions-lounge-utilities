@@ -92,6 +92,12 @@ WHERE `intervention_type` = 'Gateway Courses'
 
 $q[] = "
 UPDATE " . DB_TABL . "
+SET `outcome_indicators` = NULL
+WHERE `outcome_indicators` = ''
+";
+
+$q[] = "
+UPDATE " . DB_TABL . "
 SET `promising` = NULL
 WHERE `promising` IN ('', 'Need more info')
 ";

@@ -33,7 +33,7 @@ SELECT i.`intervention_name`,
     i.`promising`,
     i.`promising_desc`,
     i.`proportion_served`,
-    i.`outcome_indicators` outcome_indicators_i, g.`outcome_indicators` outcome_indicators_g,
+    i.`outcome_indicators`,
     i.`intervention_id`,
     i.`intervention_status`,
     c.`email`
@@ -135,10 +135,17 @@ if (!($result = $DBCONN->query($sql))) {
         'Discontinued' => '2',
     );
 
+    $map_outcome_indicators = array(
+        'Complete the courses they take with a grade of "C" or better' => '0',
+        'Earn a certificate or associate degree' => '1',
+        'Enroll in and successfully complete the initial college-level or gateway courses in subjects such as Math and English' => '2',
+        'Persistence from one term to the next' => '3',
+        'Successfully complete remedial or developmental instruction and advance to credit-bearing courses' => '4',
+    );
+
     while ($row = $result->fetch_assoc()) {
         $user_id = ($row['email'] ? get_user_id($row['email'], $sendmail) : 1); // default to admin
         $now = time();
-        $row['outcome_indicators'] = trim($row['outcome_indicators_i'] . "\n\n" . $row['outcome_indicators_g']);
         $row['intervention_type'] = process_multiselect($row['intervention_type_i'], $row['intervention_type_g']);
         $row['content_area'] = process_multiselect($row['content_area_i'], $row['content_area_g']);
         $row['target_population'] = process_multiselect($row['target_population_i'], $row['target_population_g']);
@@ -310,11 +317,9 @@ if (!($result = $DBCONN->query($sql))) {
         }
 
         if ($row['outcome_indicators']) {
-            $insert['field_outcome_indicators_value'] = $row['outcome_indicators'];
-            $insert['field_outcome_indicators_format'] = 'filtered_html';
+            $insert['field_outcome_indicators_value'] = @$map_outcome_indicators[$row['outcome_indicators']];
             insert_drupal_cck_field('outcome_indicators', $insert);
             unset($insert['field_outcome_indicators_value']);
-            unset($insert['field_outcome_indicators_format']);
         }
 
         if ($row['intervention_id']) {
