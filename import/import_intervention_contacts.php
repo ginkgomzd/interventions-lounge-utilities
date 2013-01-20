@@ -89,7 +89,7 @@ if (!($result = $DBCONN->query($sql))) {
         }
 
         while ($intv = $select->fetch_assoc()) {
-            $uid = @$intv['uid']; // all the interventions should have the same owner, so this is safe enough
+            $uid = array_key_exists('uid', $intv) ? $intv['uid'] : NULL; // all the interventions should have the same owner, so this is safe enough
             if ($intv['nid'] && $intv['vid']) {
                 // link Contact with Intervention
                 $sql = "
