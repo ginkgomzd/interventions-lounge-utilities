@@ -68,7 +68,7 @@ WHERE `gender` = 'Females only'
 
 $q[] = "
 UPDATE " . DB_TABL . "
-SET `intervention_status` = NULL
+SET `intervention_status` = 'Active'
 WHERE `intervention_status` = ''
 ";
 
