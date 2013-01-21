@@ -109,7 +109,7 @@ if (!($result = $DBCONN->query($sql))) {
         }
 
         // replace our placeholder UIDs
-        if ($uid) {
+        if (isset($uid) && !is_null($uid)) {
             // assign the proper owner to the Contact node
             $sql = "
                 UPDATE `{$db_name_drupal}`.`node`
