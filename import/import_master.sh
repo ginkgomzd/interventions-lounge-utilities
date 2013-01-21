@@ -36,9 +36,6 @@ ${MY_PATH}/normalize_gdoc_content.php ${MY_PATH}/conf/db.php
 ${MY_PATH}/normalize_core_team_leaders.php ${MY_PATH}/conf/db.php
 
 # uninstall certain modules via the database; helps clean up mess on production
-cd $SITE_PATH
-drush -y dis intervention*
-cd $CUR_PATH
 ${MY_PATH}/uninstall_modules.php ${MY_PATH}/conf/db.php
 
 # get into drush-friendly environment
@@ -64,18 +61,11 @@ drush -y en features
 # enable the sub-modules it needs
 drush -y dl features_extra
 
-drush -y cc all
 # enable meta module
 drush -y en interventions_lounge
 
-drush -y cc all
-sleep 10
 #for good measure, revert all features; helps clean up mess on production
-drush -y features-revert-all --force
-sleep 10
-drush -y cc all
-sleep 10
-drush -y cc all
+drush -y features-revert-all
 
 # turn gmap_location back on
 drush -y en gmap_location gmap_taxonomy gmap
