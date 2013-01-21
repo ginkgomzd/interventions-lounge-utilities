@@ -13,7 +13,7 @@ $DBCONN = new mysqli(DB_HOST, DB_USER, DB_PASS, $db_name_drupal) OR error_out($D
 
 $select = "
 DELETE FROM `system`
-WHERE `name` IN ('intervention', 'interventions_lounge', 'college_profile')
+WHERE `name` like 'intervention%' OR name IN ('college_profile')
 ";
 
 $result = $DBCONN->query($select);
