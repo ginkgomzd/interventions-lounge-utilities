@@ -57,7 +57,7 @@ OPTIONS:
 EOM
 
 }
-while getopts "li" opt; do
+while getopts "ldfi" opt; do
   case $opt in
     l) local_refresh=true;              ;;
     i) incremental=true;
