@@ -8,7 +8,7 @@
 # CONFIG #
 ##########
 PROJ_NAME=atd # needs to match project name in the server script
-PROJ_ROOT=/var/www/atd.ginkgostreet.com # full path with no trailing slash, please
+PROJ_ROOT=/var/www/atd.localhost # full path with no trailing slash, please
 WEB_DIR=htdocs # relative from PROJ_ROOT with no trailing slash, please
 WEB_GROUP=www-data
 WEB_USER=www-data
@@ -63,7 +63,7 @@ while getopts "li" opt; do
     i) incremental=true;
        database_refresh=false;		;;
     d) files_refresh=false;		;;
-    f) database_refresh=false;
+    f) database_refresh=false;		;;
 #    p) dump_path="$OPTARG";		;;
     ?) help_msg;			;;
   esac
