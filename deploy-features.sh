@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBROOT=/var/www/atd.localhost/htdocs
+WEBROOT=/var/www/staging.atd.org/htdocs
 
 cd ${WEBROOT}
 echo "Clearing caches..."
@@ -17,3 +17,10 @@ drush -y features-revert intervention
 
 echo "Running database updates for latest version of Interventions module..."
 drush -y updatedb
+
+echo "Running Normalize Target Population"
+drush intv-norm-targ
+
+echo "Running Core Team Lead update"
+drush ctl-up --csv=sites/default/files/core_team_leads_Mar25.csv
+
