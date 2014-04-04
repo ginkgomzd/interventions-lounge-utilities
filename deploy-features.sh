@@ -25,4 +25,3 @@ drush intv-norm-targ
 echo "Running Core Team Lead update"
 cp $HOME/$CTL_CSV $WEBROOT/sites/default/files
 drush ctl-up --csv=sites/default/files/$CTL_CSV
-
